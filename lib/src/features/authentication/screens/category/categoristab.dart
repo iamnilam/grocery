@@ -1,7 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:grocery/src/constants/images.dart';
-import 'package:grocery/src/features/authentication/screens/category/categories_page.dart';
+import 'package:grocery/src/features/authentication/screens/category/cate_babycare.dart';
+import 'package:grocery/src/features/authentication/screens/category/cate_beverages.dart';
+import 'package:grocery/src/features/authentication/screens/category/cate_breakfast.dart';
+import 'package:grocery/src/features/authentication/screens/category/cate_dairy.dart';
+import 'package:grocery/src/features/authentication/screens/category/cate_flour.dart';
+import 'package:grocery/src/features/authentication/screens/category/cate_fruits_page.dart';
+import 'package:grocery/src/features/authentication/screens/category/cate_packaged.dart';
+import 'package:grocery/src/features/authentication/screens/category/cate_personalcare.dart';
+import 'package:grocery/src/features/authentication/screens/category/cate_snacks.dart';
+import 'package:grocery/src/features/authentication/screens/category/cate_veg.dart';
+
+
 class CustomeTabCategories extends StatefulWidget {
   const CustomeTabCategories({super.key});
 
@@ -176,16 +186,17 @@ class _CustomeTabCategoriesState extends State<CustomeTabCategories> with Single
           // FruitsScreen(),
           // DairyScreen(),
           // SnacksScreen(),
-          CategoryScreen(),
-          CategoryScreen(),
-          CategoryScreen(),
-          CategoryScreen(),
-          CategoryScreen(),
-          CategoryScreen(),
-          CategoryScreen(),
-          CategoryScreen(),
-          CategoryScreen(),
-          CategoryScreen(),
+
+          VegitablesScreen(),
+          FruitsScreen(),
+          DairyScreen(),
+          SnacksScreen(),
+          BreakFastScreen(),
+          FlourScreen(),
+          PackagedFoodScreen(),
+          PersonalCareScreen(),
+          BabyCareScreen(),
+          BeveragesScreen(),
 
         ],
       ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery/src/constants/images.dart';
-import 'package:grocery/src/features/authentication/screens/category/categories_page.dart';
 import 'package:grocery/src/features/authentication/screens/category/categoristab.dart';
 
 class OurProductScreen extends StatelessWidget {

@@ -4,14 +4,14 @@ import 'package:grocery/src/constants/colors.dart';
 import 'package:grocery/src/constants/images.dart';
 import 'package:grocery/src/features/authentication/screens/category/categoristab.dart';
 
-class CategoryScreen extends StatefulWidget {
-  CategoryScreen({super.key});
+class FruitsScreen extends StatefulWidget {
+  FruitsScreen({super.key});
 
   @override
-  State<CategoryScreen> createState() => _CategoryScreenState();
+  State<FruitsScreen> createState() => _FruitsScreenState();
 }
 
-class _CategoryScreenState extends State<CategoryScreen> {
+class _FruitsScreenState extends State<FruitsScreen> {
   List<Map<String, dynamic>> veglist = [
     {
      "color": categoriesFirstColor,
@@ -25,8 +25,10 @@ class _CategoryScreenState extends State<CategoryScreen> {
       "color": categoriesSecondColor,
       "random": "loreim ipsum",
       "offer": "40% OFF",
-      "price" : "GROCERY40",
-      "height" : 175
+      "price" : 00,
+      "price" : 99,
+      "height" : 175,
+      "peiece": "3PC"
     },
     {
       "color": categoriesThirdColor,
@@ -122,6 +124,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
       "title": "Pineapple",
       "subtitle": "Lorem Ipsum is simply",
       "price" : 99,
+
     "peiece": "3PC"
     },
     {
@@ -129,14 +132,17 @@ class _CategoryScreenState extends State<CategoryScreen> {
       "image": cateStrawberry,
       "title": "Strawberry ",
       "subtitle": "Lorem Ipsum is simply",
-      "height" : 300
+      "price" : 99,
+      "height" : 300,
+      "peiece": "3PC"
     },
     {
       "color": categoriesEightColor,
       "title": "loreim ipsum ",
       "subtitle": "40% OFF",
-      "price" : "GROCERY40",
-      "height" : 175
+      "height" : 175,
+      "price" : 99,
+      "peiece": "3PC"
     },
 
   ];
@@ -147,54 +153,81 @@ class _CategoryScreenState extends State<CategoryScreen> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      body: GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-                mainAxisSpacing: 10,
-          crossAxisSpacing: 10
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+                  mainAxisExtent: 300,
+                  mainAxisSpacing: 10,
+            crossAxisSpacing: 10,
+              childAspectRatio: 180,
+          ),
+          itemCount: veglist.length,
+          itemBuilder: (context, index) {
+            return Container(
+              decoration: BoxDecoration(
+                color: veglist[index]["color"],
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Column(
+                children: [
+
+                 Image(
+                   height: 148.h,
+                     width: 187.w,
+                     image: AssetImage(veglist[index]["image"])),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Column(
+                   crossAxisAlignment: CrossAxisAlignment.start,
+                   children: [
+                       Text(veglist[index]["title"] ?? "",
+                           style: TextStyle(
+                               color: Colors.black,
+                               fontWeight: FontWeight.bold,
+                               fontSize: 24
+                           )),
+                       Text(veglist[index]["subtitle"] ?? "",
+                           style: TextStyle(
+                               fontSize: 16,
+                               color: toOnBoardText2)),
+
+
+                   ],
+                 ),
+                    ),
+                   10.verticalSpace,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Row(
+                        children: [
+                          Image(
+                            image: AssetImage("assets/images/rupees.png"),
+                          ),
+                          Text(
+                            veglist[index]["price"].toString(),
+                            style: TextStyle(color: Colors.black),
+                          ),
+                          70.horizontalSpace,
+                          Text(veglist[index]["peiece"], style: TextStyle(color: Colors.black),)
+
+                        ],
+                      ),
+                    ),
+
+
+
+
+                ],
+              ),
+
+
+            );
+          },
+
+
         ),
-        itemCount: veglist.length,
-        itemBuilder: (context, index) {
-          final hasImage = veglist[index]["image"] != null;
-          return Container(
-            height: 300.h,
-            width: 180.w,
-            decoration: BoxDecoration(
-              color: veglist[index]["color"],
-              borderRadius: BorderRadius.circular(20),
-            ),
-            child: Column(
-              children: [
-
-               Image(
-                 height: 128.h,
-                   width: 137.w,
-                   image: AssetImage(veglist[index]["image"])),
-               Column(
-                 children: [
-                   Text(veglist[index]["title"],style: TextStyle(color: Colors.black),)
-                   ,Text(veglist[index]["subtitle"],style: TextStyle(color: Colors.black),),
-                   Row(
-                     children: [
-                       const Image(
-                           image: AssetImage(
-                               "assets/images/rupees.png")),
-                        Text(
-                         veglist[index]["price"],
-                         style: TextStyle(color: Colors.black),
-                       ),
-                     ],
-                   )
-                 ],
-               )
-              ],
-            ),
-
-
-          );
-        },
-
-
       )
     );
   }

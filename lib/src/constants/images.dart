@@ -79,4 +79,8 @@ const cateGraps = "assets/images/categories/fruits/greps.png";
 const cateChikoo = "assets/images/categories/fruits/chikoo.png";
 const cateBanana = "assets/images/categories/fruits/bannana.png";
 
+const ruppess = "assets/images/rupees.png";
+
+//vegitables
+
 

@@ -1,7 +1,7 @@
-import 'package:test/test.dart';
+
+
+import 'package:grocery/main.dart';
 
 void main() {
-  test('', () {
-
-  });
+  MyApp();
 }
