@@ -79,8 +79,45 @@ const cateGraps = "assets/images/categories/fruits/greps.png";
 const cateChikoo = "assets/images/categories/fruits/chikoo.png";
 const cateBanana = "assets/images/categories/fruits/bannana.png";
 
-const ruppess = "assets/images/rupees.png";
+const rupees = "assets/images/rupees.png";
 
-//vegitables
+//baby product
+
+const babycare1 = "assets/images/categories/babycare/1.png";
+const babycare2 = "assets/images/categories/babycare/2.png";
+const babycare3 = "assets/images/categories/babycare/3.png";
+const babycare4 = "assets/images/categories/babycare/4.png";
+const babycare5 = "assets/images/categories/babycare/5.png";
+const babycare6 = "assets/images/categories/babycare/6.png";
+const babycare7 = "assets/images/categories/babycare/7.png";
+const babycare8 = "assets/images/categories/babycare/8.png";
+const babycare9 = "assets/images/categories/babycare/9.png";
+const babycare10 = "assets/images/categories/babycare/10.png";
+const babycare11 = "assets/images/categories/babycare/11.png";
+const babycare12 = "assets/images/categories/babycare/12.png";
+const babycare13 = "assets/images/categories/babycare/13.png";
+const babycare14 = "assets/images/categories/babycare/14.png";
+const babycare15 = "assets/images/categories/babycare/15.png";
+const babycare16 = "assets/images/categories/babycare/16.png";
+
+//beverages
+const beverages1 = "assets/images/categories/beverages/1.png";
+const beverages2 = "assets/images/categories/beverages/2.png";
+const beverages3 = "assets/images/categories/beverages/3.png";
+const beverages4 = "assets/images/categories/beverages/4.png";
+const beverages5 = "assets/images/categories/beverages/5.png";
+const beverages6 = "assets/images/categories/beverages/6.png";
+const beverages7 = "assets/images/categories/beverages/7.png";
+const beverages8 = "assets/images/categories/beverages/8.png";
+const beverages9 = "assets/images/categories/beverages/9.png";
+const beverages10 = "assets/images/categories/beverages/10.png";
+const beverages11 = "assets/images/categories/beverages/11.png";
+const beverages12 = "assets/images/categories/beverages/12.png";
+const beverages13 = "assets/images/categories/beverages/13.png";
+const beverages14 = "assets/images/categories/beverages/14.png";
+const beverages15 = "assets/images/categories/beverages/15.png";
+const beverages16 = "assets/images/categories/beverages/16.png";
+
+
 
 

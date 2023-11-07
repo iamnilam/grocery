@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart'; // Import StaggeredGridView
 import 'package:grocery/src/constants/colors.dart';
 import 'package:grocery/src/constants/images.dart';
-import 'package:grocery/src/features/authentication/screens/category/categoristab.dart';
 
 class FlourScreen extends StatefulWidget {
   FlourScreen({Key? key}) : super(key: key);
@@ -17,6 +16,7 @@ class _FlourScreenState extends State<FlourScreen> {
     {
       "color": categoriesFirstColor,
       "image": catekiwi,
+      "imageRs": rupees,
       "title": "Kiwi",
       "subtitle": "Lorem Ipsum is simply",
       "price": 99,
@@ -31,6 +31,7 @@ class _FlourScreenState extends State<FlourScreen> {
     {
       "color": categoriesThirdColor,
       "image": cateAvacado,
+      "imageRs": rupees,
       "title": "Avacado",
       "subtitle": "Lorem Ipsum is simply",
       "price": 99,
@@ -39,6 +40,7 @@ class _FlourScreenState extends State<FlourScreen> {
     {
       "color": categoriesFiveColor,
       "image": catePapaya,
+      "imageRs": rupees,
       "title": "Papaya",
       "subtitle": "Lorem Ipsum is simply",
       "price": 99,
@@ -47,6 +49,7 @@ class _FlourScreenState extends State<FlourScreen> {
     {
       "color": categoriesSixColor,
       "image": cateMango,
+      "imageRs": rupees,
       "title": "Mango",
       "subtitle": "Lorem Ipsum is simply",
       "price": 99,
@@ -55,6 +58,7 @@ class _FlourScreenState extends State<FlourScreen> {
     {
       "color": categoriesSevenColor,
       "image": cateStrawberry,
+      "imageRs": rupees,
       "title": "Strawberry ",
       "subtitle": "Lorem Ipsum is simply",
       "price": 99,
@@ -63,6 +67,7 @@ class _FlourScreenState extends State<FlourScreen> {
     {
       "color": categoriesEightColor,
       "image": cateGraps,
+      "imageRs": rupees,
       "title": "Graps",
       "subtitle": "Lorem Ipsum is simply",
       "price": 99,
@@ -71,6 +76,7 @@ class _FlourScreenState extends State<FlourScreen> {
     {
       "color": categoriesEightColor,
       "image": cateBlueberrie,
+      "imageRs": rupees,
       "title": "Blueberrie",
       "subtitle": "Lorem Ipsum is simply",
       "price": 99,
@@ -79,6 +85,7 @@ class _FlourScreenState extends State<FlourScreen> {
     {
       "color": categoriesThirdColor,
       "image": cateAvacado,
+      "imageRs": rupees,
       "title": "Avacado",
       "subtitle": "Lorem Ipsum is simply",
       "price": 99,
@@ -87,6 +94,7 @@ class _FlourScreenState extends State<FlourScreen> {
     {
       "color": categoriesFirstColor,
       "image": cateChikoo,
+      "imageRs": rupees,
       "title": "Chikoo",
       "subtitle": "Lorem Ipsum is simply",
       "price": 99,
@@ -95,6 +103,7 @@ class _FlourScreenState extends State<FlourScreen> {
     {
       "color": categoriesSixColor,
       "image": cateMango,
+      "imageRs": rupees,
       "title": "Mango",
       "subtitle": "Lorem Ipsum is simply",
       "price": 99,
@@ -103,6 +112,7 @@ class _FlourScreenState extends State<FlourScreen> {
     {
       "color": categoriesFirstColor,
       "image": cateBanana,
+      "imageRs": rupees,
       "title": "Banana",
       "subtitle": "Lorem Ipsum is simply",
       "price": 99,
@@ -111,6 +121,7 @@ class _FlourScreenState extends State<FlourScreen> {
     {
       "color": categoriesFirstColor,
       "image": catekiwi,
+      "imageRs": rupees,
       "title": "Pineapple",
       "subtitle": "Lorem Ipsum is simply",
       "price": 99,
@@ -119,6 +130,7 @@ class _FlourScreenState extends State<FlourScreen> {
     {
       "color": categoriesSecondColor,
       "image": cateStrawberry,
+      "imageRs": rupees,
       "title": "Strawberry ",
       "subtitle": "Lorem Ipsum is simply",
       "price": 99,
@@ -134,8 +146,6 @@ class _FlourScreenState extends State<FlourScreen> {
 
   bool defaultText = true;
   bool loading = true;
-
-  String ruppess = "assets/images/rupees.png";
 
   @override
   Widget build(BuildContext context) {
@@ -156,87 +166,124 @@ class _FlourScreenState extends State<FlourScreen> {
               ),
               child: Column(
                 children: [
-                  veglist[index]["image"] != null
-                      ? Image(
-                          height: 148.h,
-                          width: 187.w,
-                          image: AssetImage(veglist[index]["image"] ?? ""),
-                        )
-                      : const Padding(
-                          padding: EdgeInsets.only(top: 20),
-                          child: Text(
-                            "loreim ipsum",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold),
-                          ),
+                  if (veglist[index]["image"] != null && veglist[index]["image"] is String)
+                    Image(
+                      height: 148.h,
+                      width: 187.w,
+                      image: AssetImage(veglist[index]["image"] ?? ""),
+                    )
+                  else
+                    Padding(
+                      padding: EdgeInsets.only(top: 20),
+                      child: Text(
+                        veglist[index]["titleofffer"] ?? "", // Provide a default value or handle null case
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
                         ),
+                      ),
+                    ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        veglist[index]["title"] != null
-                            ? Text(veglist[index]["title"] ?? "",
-                                style: const TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 24))
-                            : Center(
+                        if (veglist[index]["title"] != null && veglist[index]["title"] is String)
+                          Text(veglist[index]["title"] ?? "",
+                              style: const TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 24))
+                        else
+                          Center(
+                            child: Text(
+                              veglist[index]["titleofffer"] ?? "", // Provide a default value or handle null case
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 12,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                        if (veglist[index]["subtitle"] != null && veglist[index]["subtitle"] is String)
+                          Text(veglist[index]["subtitle"] ?? "",
+                              style: const TextStyle(
+                                  fontSize: 16, color: toOnBoardText2))
+                        else
+                          // Container(
+                          //   height: 30.h,
+                          //   width: 142.w,
+                          //   decoration: BoxDecoration(
+                          //     color: Colors.white,
+                          //     boxShadow: [BoxShadow(color: Color(0xff10CE7B))],
+                          //   ),
+                          //   child: Center(
+                          //     child: Text(
+                          //       veglist[index]["subtitleoffer"] ?? "", // Provide a default value or handle null case
+                          //       style: TextStyle(
+                          //         fontWeight: FontWeight.bold,
+                          //         fontSize: 24,
+                          //         color: Colors.black,
+                          //       ),
+                          //     ),
+                          //   ),
+                          // ),
+                        Column(
+                          children: [
+                            Container(
+                              height: 30.h,
+                              width: 142.w,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                boxShadow: [BoxShadow(color: Color(0xff10CE7B))],
+                              ),
+                              child: Center(
                                 child: Text(
-                                veglist[index]["offer"],
-                                style: const TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 24,
-                                    color: Colors.black),
-                              )),
-                        veglist[index]["subtitle"] != null
-                            ? Text(veglist[index]["subtitle"] ?? "",
-                                style: const TextStyle(
-                                    fontSize: 16, color: toOnBoardText2))
-                            : Container(
-                                height: 30.h,
-                                width: 142.w,
-                                decoration: const BoxDecoration(
-                                    color: Colors.white,
-                                    boxShadow: [
-                                      BoxShadow(color: Color(0xff10CE7B))
-                                    ]),
-                                child: const Center(
-                                    child: Text(
-                                  "GROCERY40",
+                                  veglist[index]["offer"] ?? "", // Provide a default value or handle null case
                                   style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
-                                      color: Colors.black),
-                                ))),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ],
                     ),
                   ),
                   10.verticalSpace,
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    padding: EdgeInsets.symmetric(horizontal: 20),
                     child: Row(
                       children: [
-                        const Image(
-                          image: AssetImage("assets/images/rupees.png"),
-                        ),
-                        Text(
-                          veglist[index]["price"].toString(),
-                          style: const TextStyle(color: Colors.black),
-                        ),
+                        if (veglist[index]["imageRs"] != null && veglist[index]["imageRs"] is String)
+                          Image(
+                            image: AssetImage(veglist[index]["imageRs"] ?? ""),
+                          )
+                        else
+                          Text(""),
+                        if (veglist[index]["price"] != null && veglist[index]["price"] is int)
+                          Text(
+                            veglist[index]["price"].toString() ?? "", // Use the ?. operator to handle null
+                            style: const TextStyle(color: Colors.black),
+                          )
+                        else
+                          Text(""),
                         70.horizontalSpace,
                         Text(
-                          veglist[index]["peiece"],
+                          veglist[index]["peiece"] ?? "",
                           style: const TextStyle(color: Colors.black),
-                        )
+                        ),
                       ],
                     ),
                   ),
                   20.verticalSpace,
                 ],
               ),
+
             );
           },
         ),

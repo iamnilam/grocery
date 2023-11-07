@@ -140,7 +140,7 @@ class _CustomeTabCategoriesState extends State<CustomeTabCategories> with Single
         bottom: TabBar(
           controller: mTabController,
           isScrollable: true ,
-          tabs: [
+          tabs: const[
             Tab(
 
               child: Text("Vegetables",style: TextStyle(color: Colors.black),),
