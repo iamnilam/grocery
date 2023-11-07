@@ -18,11 +18,12 @@ class _CategoryScreenState extends State<CategoryScreen> {
       "image": catekiwi,
       "title": "Kiwi",
       "subtitle": "Lorem Ipsum is simply",
-      "price" : "3PC"
+      "price" : 99,
+      "peiece": "3PC"
     },
     {
       "color": categoriesSecondColor,
-      "image": "loreim ipsum",
+      "random": "loreim ipsum",
       "offer": "40% OFF",
       "price" : "GROCERY40",
       "height" : 175
@@ -32,7 +33,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
       "image": cateAvacado,
       "title": "Avacado",
       "subtitle": "Lorem Ipsum is simply",
-      "price" : "3PC",
+      "price" : 99,
+    "peiece": "3PC",
       "height" : 300
     },
     {
@@ -40,7 +42,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
       "image": catePapaya,
       "title": "Papaya",
       "subtitle": "Lorem Ipsum is simply",
-      "price" : "3PC",
+      "price" : 99,
+    "peiece": "3PC",
       "height" : 300
     },
     {
@@ -48,7 +51,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
       "image": cateMango,
       "title": "Mango",
       "subtitle": "Lorem Ipsum is simply",
-      "price" : "3PC",
+      "price" : 99,
+    "peiece": "3PC",
       "height" : 300
     },
     {
@@ -56,14 +60,16 @@ class _CategoryScreenState extends State<CategoryScreen> {
       "image": cateStrawberry,
       "title": "Strawberry ",
       "subtitle": "Lorem Ipsum is simply",
-      "price" : "3PC"
+      "price" : 99,
+    "peiece": "3PC"
     },
     {
       "color": categoriesEightColor,
       "image": cateGraps,
       "title": "Graps",
       "subtitle": "Lorem Ipsum is simply",
-      "price" : "3PC",
+      "price" : 99,
+    "peiece": "3PC",
       "height" : 300
     },
     {
@@ -71,7 +77,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
       "image": cateBlueberrie,
       "title": "Blueberrie",
       "subtitle": "Lorem Ipsum is simply",
-      "price" : "3PC",
+      "price" : 99,
+    "peiece": "3PC",
       "height" : 300
     },
     {
@@ -79,7 +86,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
       "image": cateAvacado,
       "title": "Avacado",
       "subtitle": "Lorem Ipsum is simply",
-      "price" : "3PC",
+      "price" : 99,
+    "peiece": "3PC",
       "height" : 300
     },
     {
@@ -87,7 +95,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
       "image": cateChikoo,
       "title": "Chikoo",
       "subtitle": "Lorem Ipsum is simply",
-      "price" : "3PC",
+      "price" : 99,
+    "peiece": "3PC",
       "height" : 300
     },
     {
@@ -95,7 +104,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
       "image": cateMango,
       "title": "Mango",
       "subtitle": "Lorem Ipsum is simply",
-      "price" : "3PC",
+      "price" : 99,
+    "peiece": "3PC",
       "height" : 300
     },
     {
@@ -103,14 +113,16 @@ class _CategoryScreenState extends State<CategoryScreen> {
       "image": cateBanana,
       "title": "Banana",
       "subtitle": "Lorem Ipsum is simply",
-      "price" : "3PC"
+      "price" : 99,
+    "peiece": "3PC"
     },
     {
       "color": categoriesFirstColor,
       "image": catekiwi,
       "title": "Pineapple",
       "subtitle": "Lorem Ipsum is simply",
-      "price" : "3PC"
+      "price" : 99,
+    "peiece": "3PC"
     },
     {
       "color": categoriesSecondColor,
@@ -145,7 +157,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
         itemBuilder: (context, index) {
           final hasImage = veglist[index]["image"] != null;
           return Container(
-            height: veglist[index]["height"]?.toDouble() ?? 0.0,
+            height: 300.h,
             width: 180.w,
             decoration: BoxDecoration(
               color: veglist[index]["color"],
@@ -153,8 +165,28 @@ class _CategoryScreenState extends State<CategoryScreen> {
             ),
             child: Column(
               children: [
-                veglist[index]["image"] == null ? Text(veglist[index]["random"] ?? "", style: TextStyle(color: Colors.black))
-                    : Image(image: AssetImage(veglist[index]["image"])),
+
+               Image(
+                 height: 128.h,
+                   width: 137.w,
+                   image: AssetImage(veglist[index]["image"])),
+               Column(
+                 children: [
+                   Text(veglist[index]["title"],style: TextStyle(color: Colors.black),)
+                   ,Text(veglist[index]["subtitle"],style: TextStyle(color: Colors.black),),
+                   Row(
+                     children: [
+                       const Image(
+                           image: AssetImage(
+                               "assets/images/rupees.png")),
+                        Text(
+                         veglist[index]["price"],
+                         style: TextStyle(color: Colors.black),
+                       ),
+                     ],
+                   )
+                 ],
+               )
               ],
             ),
 
