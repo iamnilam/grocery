@@ -129,7 +129,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                         Text(
+                        Text(
                           'LOG IN                            ',
                           style: TextStyle(
                               fontFamily: "LibreFranklin",
@@ -187,8 +187,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           color: Colors.white,
                           border: Border.all(
                               color: const Color.fromRGBO(196, 135, 198, .3)),
-                          boxShadow: const[
-                             BoxShadow(
+                          boxShadow: const [
+                            BoxShadow(
                               color: Color.fromRGBO(196, 135, 198, .3),
                               blurRadius: 20,
                               offset: Offset(0, 10),
@@ -209,7 +209,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                 prefixIcon: Image(
                                   height: 30.h,
                                   width: 30.w,
-                                  image: const AssetImage("assets/images/gmail.png"),
+                                  image: const AssetImage(
+                                      "assets/images/gmail.png"),
                                 ),
                                 border: InputBorder.none,
                                 hintText: "Full Name",
@@ -231,7 +232,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                 prefixIcon: Image(
                                   height: 30.h,
                                   width: 30.w,
-                                  image: const AssetImage("assets/images/lock.png"),
+                                  image: const AssetImage(
+                                      "assets/images/lock.png"),
                                 ),
                                 border: InputBorder.none,
                                 hintText: "Password",

@@ -13,7 +13,7 @@ class BestDealScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-         Center(
+        Center(
           child: Text(
             "Best Deal of  March",
             style: TextStyle(

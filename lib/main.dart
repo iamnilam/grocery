@@ -6,7 +6,6 @@ import 'package:get/get.dart';
 import 'package:grocery/src/features/authentication/screens/auth/controller/auth_controller.dart';
 import 'src/features/authentication/screens/on_boarding/on_boarding_screen.dart';
 
-
 void main() async {
   await ScreenUtil.ensureScreenSize();
   WidgetsFlutterBinding.ensureInitialized();

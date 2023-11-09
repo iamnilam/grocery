@@ -11,7 +11,10 @@ class OurProductScreen extends StatelessWidget {
 
   // final List ourProduct;
   List ourProduct = [
-    {"image": vegetables, "title": "Vegetables",},
+    {
+      "image": vegetables,
+      "title": "Vegetables",
+    },
     {"image": fruits, "title": "Fruits"},
     {"image": snacks, "title": "Dairy"},
     {"image": snacks, "title": "Snacks"},
@@ -28,12 +31,12 @@ class OurProductScreen extends StatelessWidget {
       children: [
         GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 5,
+            crossAxisCount: 5,
             mainAxisExtent: 80,
             mainAxisSpacing: 10.0,
             crossAxisSpacing: 10.0,
             // Added missing '0' after '20'
-              ),
+          ),
           shrinkWrap: true, // Set shrinkWrap to true
           itemCount: ourProduct.length,
           itemBuilder: (context, index) {
@@ -45,13 +48,46 @@ class OurProductScreen extends StatelessWidget {
                       MaterialPageRoute(
                           builder: (context) => CustomeTabCategories()));
                 } else if (ourProduct[index]["title"] == "Fruits") {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CustomeTabCategories()));
                 } else if (ourProduct[index]["title"] == "Dairy") {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CustomeTabCategories()));
                 } else if (ourProduct[index]["title"] == "Snacks") {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CustomeTabCategories()));
                 } else if (ourProduct[index]["title"] == "Breakfast") {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CustomeTabCategories()));
                 } else if (ourProduct[index]["title"] == "Flour &Grains") {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CustomeTabCategories()));
                 } else if (ourProduct[index]["title"] == "Packaged Food") {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CustomeTabCategories()));
                 } else if (ourProduct[index]["title"] == "Baby Care Products") {
-                } else if (ourProduct[index]["title"] == "Beverages") {}
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CustomeTabCategories()));
+                } else if (ourProduct[index]["title"] == "Beverages") {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CustomeTabCategories()));
+                }
               },
               child: Column(
                 children: [

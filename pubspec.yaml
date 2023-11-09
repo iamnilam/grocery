@@ -85,6 +85,14 @@ flutter:
     - assets/images/greengrocer/
     - assets/images/hygieneproducts/
     - assets/images/categories/fruits/
+    - assets/images/categories/vegitables/
+    - assets/images/categories/dairy/
+    - assets/images/categories/snacks/
+    - assets/images/categories/breakfast/
+    - assets/images/categories/flour/
+    - assets/images/categories/personal/
+    - assets/images/categories/babycare/
+    - assets/images/categories/beverages/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

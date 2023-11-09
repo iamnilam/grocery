@@ -4,6 +4,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:grocery/src/constants/colors.dart';
 import 'package:grocery/src/constants/images.dart';
 import 'package:grocery/src/features/authentication/screens/category/categoristab.dart';
+import 'package:grocery/src/features/authentication/screens/product/productScreen.dart';
 
 class BreakFastScreen extends StatefulWidget {
   BreakFastScreen({super.key});
@@ -13,135 +14,153 @@ class BreakFastScreen extends StatefulWidget {
 }
 
 class _BreakFastScreenState extends State<BreakFastScreen> {
-  List<Map<String, dynamic>> veglist = [
+  List<Map<String, dynamic>> breakFastlist = [
     {
       "color": categoriesFirstColor,
-      "image": catekiwi,
+      "image": breakfast1,
       "imageRs": rupees,
-      "title": "Kiwi",
-      "subtitle": "Lorem Ipsum is simply",
-      "price": 99,
-      "peiece": "3PC"
-    },
-    {
-      "color": categoriesEightColor,
-      "title": "loreim ipsum ",
-      "subtitle": "40% OFF",
-      "offer": "GROCERY40"
-    },
-    {
-      "color": categoriesThirdColor,
-      "image": cateAvacado,
-      "imageRs": rupees,
-      "title": "Avacado",
-      "subtitle": "Lorem Ipsum is simply",
-      "price": 99,
-      "peiece": "3PC",
-    },
-    {
-      "color": categoriesFiveColor,
-      "image": catePapaya,
-      "imageRs": rupees,
-      "title": "Papaya",
-      "subtitle": "Lorem Ipsum is simply",
-      "price": 99,
-      "peiece": "3PC",
-    },
-    {
-      "color": categoriesSixColor,
-      "image": cateMango,
-      "imageRs": rupees,
-      "title": "Mango",
-      "subtitle": "Lorem Ipsum is simply",
-      "price": 99,
-      "peiece": "3PC",
-    },
-    {
-      "color": categoriesSevenColor,
-      "image": cateStrawberry,
-      "imageRs": rupees,
-      "title": "Strawberry ",
-      "subtitle": "Lorem Ipsum is simply",
-      "price": 99,
-      "peiece": "3PC"
-    },
-    {
-      "color": categoriesEightColor,
-      "image": cateGraps,
-      "imageRs": rupees,
-      "title": "Graps",
-      "subtitle": "Lorem Ipsum is simply",
-      "price": 99,
-      "peiece": "3PC",
-    },
-    {
-      "color": categoriesEightColor,
-      "image": cateBlueberrie,
-      "imageRs": rupees,
-      "title": "Blueberrie",
-      "subtitle": "Lorem Ipsum is simply",
-      "price": 99,
-      "peiece": "3PC",
-    },
-    {
-      "color": categoriesThirdColor,
-      "image": cateAvacado,
-      "imageRs": rupees,
-      "title": "Avacado",
-      "subtitle": "Lorem Ipsum is simply",
-      "price": 99,
-      "peiece": "3PC",
-    },
-    {
-      "color": categoriesFirstColor,
-      "image": cateChikoo,
-      "imageRs": rupees,
-      "title": "Chikoo",
-      "subtitle": "Lorem Ipsum is simply",
-      "price": 99,
-      "peiece": "3PC",
-    },
-    {
-      "color": categoriesSixColor,
-      "image": cateMango,
-      "imageRs": rupees,
-      "title": "Mango",
-      "subtitle": "Lorem Ipsum is simply",
-      "price": 99,
-      "peiece": "3PC",
-    },
-    {
-      "color": categoriesFirstColor,
-      "image": cateBanana,
-      "imageRs": rupees,
-      "title": "Banana",
-      "subtitle": "Lorem Ipsum is simply",
-      "price": 99,
-      "peiece": "3PC"
-    },
-    {
-      "color": categoriesFirstColor,
-      "image": catekiwi,
-      "imageRs": rupees,
-      "title": "Pineapple",
+      "title": "Bread",
       "subtitle": "Lorem Ipsum is simply",
       "price": 99,
       "peiece": "3PC"
     },
     {
       "color": categoriesSecondColor,
-      "image": cateStrawberry,
+      "title": "loreim ipsum ",
+      "subtitle": "40% OFF",
+      "offer": "GROCERY40"
+    },
+    {
+      "color": categoriesFourColor,
+      "image": breakfast2,
       "imageRs": rupees,
-      "title": "Strawberry ",
+      "title": "Hersheys",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC",
+    },
+    {
+      "color": categoriesThirdColor,
+      "image": breakfast3,
+      "imageRs": rupees,
+      "title": "Corn Flakes",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC",
+    },
+    {
+      "color": categoriesSixColor,
+      "image": breakfast4,
+      "imageRs": rupees,
+      "title": "Oats",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC",
+    },
+    {
+      "color": categoriesFiveColor,
+      "image": breakfast5,
+      "imageRs": rupees,
+      "title": "Good day ",
       "subtitle": "Lorem Ipsum is simply",
       "price": 99,
       "peiece": "3PC"
     },
     {
       "color": categoriesEightColor,
-      "titleofffer": "loreim ipsum ",
-      "subtitleoffer": "40% OFF",
-      "offer": "GROCERY40"
+      "image": breakfast6,
+      "imageRs": rupees,
+      "title": "Oats",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC",
+    },
+    {
+      "color": categoriesSevenColor,
+      "image": breakfast7,
+      "imageRs": rupees,
+      "title": "Toast ",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC",
+    },
+    {
+      "color": categorieselevenColor,
+      "image": breakfast8,
+      "imageRs": rupees,
+      "title": "Pingles",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC",
+    },
+    {
+      "color": categoriesThirdColor,
+      "image": breakfast9,
+      "imageRs": rupees,
+      "title": "Cake ",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC",
+    },
+    {
+      "color": categoriesFiveColor,
+      "image": breakfast10,
+      "imageRs": rupees,
+      "title": "Hershes",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC",
+    },
+    {
+      "color": categoriesSixColor,
+      "image": breakfast11,
+      "imageRs": rupees,
+      "title": "Corn flacks",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC"
+    },
+    {
+      "color": categoriesSevenColor,
+      "image": breakfast12,
+      "imageRs": rupees,
+      "title": "Oats",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC"
+    },
+    {
+      "color": categorieselevenColor,
+      "image": breakfast13,
+      "imageRs": rupees,
+      "title": "Goodday",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC"
+    },
+    {
+      "color": categoriesEightColor,
+      "image": breakfast14,
+      "imageRs": rupees,
+      "title": "Shin cup",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC"
+    },
+    {
+      "color": categoriesThirdColor,
+      "image": breakfast15,
+      "imageRs": rupees,
+      "title": "Toast",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC"
+    },
+    {
+      "color": categoriesSecondColor,
+      "image": breakfast16,
+      // "title": "Snacks",
+      // "subtitle": "Lorem Ipsum is simply",
     },
   ];
 
@@ -158,140 +177,173 @@ class _BreakFastScreenState extends State<BreakFastScreen> {
           staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
-          itemCount: veglist.length,
+          itemCount: breakFastlist.length,
           itemBuilder: (context, index) {
-            return Container(
-              decoration: BoxDecoration(
-                color: veglist[index]["color"],
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Column(
-                children: [
-                  if (veglist[index]["image"] != null && veglist[index]["image"] is String)
-                    Image(
-                      height: 148.h,
-                      width: 187.w,
-                      image: AssetImage(veglist[index]["image"] ?? ""),
-                    )
-                  else
-                    Padding(
-                      padding: EdgeInsets.only(top: 20),
-                      child: Text(
-                        veglist[index]["titleofffer"] ?? "", // Provide a default value or handle null case
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
+            return Stack(children: [
+              Container(
+                decoration: BoxDecoration(
+                  color: breakFastlist[index]["color"],
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Column(
+                  children: [
+                    if (breakFastlist[index]["image"] != null &&
+                        breakFastlist[index]["image"] is String)
+                      Padding(
+                        padding: EdgeInsets.only(top: 20),
+                        child: Image(
+                          height: 148.h,
+                          width: 187.w,
+                          image: AssetImage(breakFastlist[index]["image"] ?? ""),
+                        ),
+                      )
+                    else
+                      Padding(
+                        padding: EdgeInsets.only(top: 20),
+                        child: Text(
+                          breakFastlist[index]["titleofffer"] ??
+                              "", // Provide a default value or handle null case
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
-                    ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        if (veglist[index]["title"] != null && veglist[index]["title"] is String)
-                          Text(veglist[index]["title"] ?? "",
-                              style: const TextStyle(
-                                  color: Colors.black,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          if (breakFastlist[index]["title"] != null &&
+                              breakFastlist[index]["title"] is String)
+                            Text(breakFastlist[index]["title"] ?? "",
+                                style: const TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 24))
+                          else
+                            Center(
+                              child: Text(
+                                breakFastlist[index]["titleofffer"] ??
+                                    "", // Provide a default value or handle null case
+                                style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 24))
-                        else
-                          Center(
-                            child: Text(
-                              veglist[index]["titleofffer"] ?? "", // Provide a default value or handle null case
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 12,
-                                color: Colors.black,
+                                  fontSize: 12,
+                                  color: Colors.black,
+                                ),
                               ),
                             ),
-                          ),
-                        if (veglist[index]["subtitle"] != null && veglist[index]["subtitle"] is String)
-                          Text(veglist[index]["subtitle"] ?? "",
-                              style: const TextStyle(
-                                  fontSize: 16, color: toOnBoardText2))
-                        else
-                        // Container(
-                        //   height: 30.h,
-                        //   width: 142.w,
-                        //   decoration: BoxDecoration(
-                        //     color: Colors.white,
-                        //     boxShadow: [BoxShadow(color: Color(0xff10CE7B))],
-                        //   ),
-                        //   child: Center(
-                        //     child: Text(
-                        //       veglist[index]["subtitleoffer"] ?? "", // Provide a default value or handle null case
-                        //       style: TextStyle(
-                        //         fontWeight: FontWeight.bold,
-                        //         fontSize: 24,
-                        //         color: Colors.black,
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ),
-                          Column(
-                            children: [
-                              Container(
-                                height: 30.h,
-                                width: 142.w,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  boxShadow: [BoxShadow(color: Color(0xff10CE7B))],
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    veglist[index]["offer"] ?? "", // Provide a default value or handle null case
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
-                                      color: Colors.black,
+                          if (breakFastlist[index]["subtitle"] != null &&
+                              breakFastlist[index]["subtitle"] is String)
+                            Text(breakFastlist[index]["subtitle"] ?? "",
+                                style: const TextStyle(
+                                    fontSize: 16, color: toOnBoardText2))
+                          else
+                          // Container(
+                          //   height: 30.h,
+                          //   width: 142.w,
+                          //   decoration: BoxDecoration(
+                          //     color: Colors.white,
+                          //     boxShadow: [BoxShadow(color: Color(0xff10CE7B))],
+                          //   ),
+                          //   child: Center(
+                          //     child: Text(
+                          //       veglist[index]["subtitleoffer"] ?? "", // Provide a default value or handle null case
+                          //       style: TextStyle(
+                          //         fontWeight: FontWeight.bold,
+                          //         fontSize: 24,
+                          //         color: Colors.black,
+                          //       ),
+                          //     ),
+                          //   ),
+                          // ),
+                            Column(
+                              children: [
+                                Container(
+                                  height: 30.h,
+                                  width: 142.w,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    boxShadow: [
+                                      BoxShadow(color: Color(0xff10CE7B))
+                                    ],
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      breakFastlist[index]["offer"] ??
+                                          "", // Provide a default value or handle null case
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20,
+                                        color: Colors.black,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                      ],
+                              ],
+                            ),
+                        ],
+                      ),
                     ),
-                  ),
-                  10.verticalSpace,
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
-                    child: Row(
-                      children: [
-                        if (veglist[index]["imageRs"] != null && veglist[index]["imageRs"] is String)
-                          Image(
-                            image: AssetImage(veglist[index]["imageRs"] ?? ""),
-                          )
-                        else
-                          Text(""),
-                        if (veglist[index]["price"] != null && veglist[index]["price"] is int)
+                    10.verticalSpace,
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: Row(
+                        children: [
+                          if (breakFastlist[index]["imageRs"] != null &&
+                              breakFastlist[index]["imageRs"] is String)
+                            Image(
+                              image:
+                              AssetImage(breakFastlist[index]["imageRs"] ?? ""),
+                            )
+                          else
+                            Text(""),
+                          if (breakFastlist[index]["price"] != null &&
+                              breakFastlist[index]["price"] is int)
+                            Text(
+                              breakFastlist[index]["price"].toString() ??
+                                  "", // Use the ?. operator to handle null
+                              style: const TextStyle(color: Colors.black),
+                            )
+                          else
+                            Text(""),
+                          70.horizontalSpace,
                           Text(
-                            veglist[index]["price"].toString() ?? "", // Use the ?. operator to handle null
+                            breakFastlist[index]["peiece"] ?? "",
                             style: const TextStyle(color: Colors.black),
-                          )
-                        else
-                          Text(""),
-                        70.horizontalSpace,
-                        Text(
-                          veglist[index]["peiece"] ?? "",
-                          style: const TextStyle(color: Colors.black),
-                        ),
-                      ],
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  20.verticalSpace,
-                ],
+                    20.verticalSpace,
+                  ],
+                ),
               ),
-
-            );
+              Positioned(
+                  left: 130,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MainProductPage(
+                                index: index,
+                              )));
+                    },
+                    child: Container(
+                      width: 44.w,
+                      height: 44.h,
+                      decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.5),
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Icon(Icons.add),
+                    ),
+                  ))
+            ]);
           },
         ),
       ),
     );
   }
 }
-
-
-

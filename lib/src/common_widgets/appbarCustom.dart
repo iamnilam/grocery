@@ -24,13 +24,14 @@ AppBar buildAppBarCustom() {
           ),
         ),
       ),
-      IconButton(onPressed: (){}, icon: Image(
-          color: Colors.white,
-          image: AssetImage(
-            cartIcon,
-          )),),
-
-
+      IconButton(
+        onPressed: () {},
+        icon: Image(
+            color: Colors.white,
+            image: AssetImage(
+              cartIcon,
+            )),
+      ),
     ],
     flexibleSpace: Container(
       color: Colors.white38,
@@ -62,7 +63,8 @@ AppBar buildAppBarCustom() {
               height: 33.h,
               width: 325.w,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.r), color: Colors.white),
+                  borderRadius: BorderRadius.circular(10.r),
+                  color: Colors.white),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -101,10 +103,11 @@ AppBar buildAppBarCustom() {
       ),
     ),
     bottom: PreferredSize(
-      child: Container(
-
+      child: Container(),
+      preferredSize: Size(
+        double.infinity,
+        300,
       ),
-      preferredSize: Size(double.infinity, 300,),
     ),
     backgroundColor: Colors.white,
     elevation: 0,

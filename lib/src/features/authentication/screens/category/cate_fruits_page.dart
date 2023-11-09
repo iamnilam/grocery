@@ -4,6 +4,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:grocery/src/constants/colors.dart';
 import 'package:grocery/src/constants/images.dart';
 import 'package:grocery/src/features/authentication/screens/category/categoristab.dart';
+import 'package:grocery/src/features/authentication/screens/product/productScreen.dart';
 
 class FruitsScreen extends StatefulWidget {
   FruitsScreen({super.key});
@@ -30,7 +31,7 @@ class _FruitsScreenState extends State<FruitsScreen> {
       "offer": "GROCERY40"
     },
     {
-      "color": categoriesThirdColor,
+      "color": categoriesFourColor,
       "image": cateAvacado,
       "imageRs": rupees,
       "title": "Avacado",
@@ -39,7 +40,7 @@ class _FruitsScreenState extends State<FruitsScreen> {
       "peiece": "3PC",
     },
     {
-      "color": categoriesFiveColor,
+      "color": categoriesThirdColor,
       "image": catePapaya,
       "imageRs": rupees,
       "title": "Papaya",
@@ -57,7 +58,7 @@ class _FruitsScreenState extends State<FruitsScreen> {
       "peiece": "3PC",
     },
     {
-      "color": categoriesSevenColor,
+      "color": categoriesFiveColor,
       "image": cateStrawberry,
       "imageRs": rupees,
       "title": "Strawberry ",
@@ -75,7 +76,7 @@ class _FruitsScreenState extends State<FruitsScreen> {
       "peiece": "3PC",
     },
     {
-      "color": categoriesEightColor,
+      "color": categoriesSevenColor,
       "image": cateBlueberrie,
       "imageRs": rupees,
       "title": "Blueberrie",
@@ -84,7 +85,7 @@ class _FruitsScreenState extends State<FruitsScreen> {
       "peiece": "3PC",
     },
     {
-      "color": categoriesThirdColor,
+      "color": categorieselevenColor,
       "image": cateAvacado,
       "imageRs": rupees,
       "title": "Avacado",
@@ -93,7 +94,7 @@ class _FruitsScreenState extends State<FruitsScreen> {
       "peiece": "3PC",
     },
     {
-      "color": categoriesFirstColor,
+      "color": categoriesThirdColor,
       "image": cateChikoo,
       "imageRs": rupees,
       "title": "Chikoo",
@@ -102,7 +103,7 @@ class _FruitsScreenState extends State<FruitsScreen> {
       "peiece": "3PC",
     },
     {
-      "color": categoriesSixColor,
+      "color": categoriesFiveColor,
       "image": cateMango,
       "imageRs": rupees,
       "title": "Mango",
@@ -111,7 +112,7 @@ class _FruitsScreenState extends State<FruitsScreen> {
       "peiece": "3PC",
     },
     {
-      "color": categoriesFirstColor,
+      "color": categoriesSixColor,
       "image": cateBanana,
       "imageRs": rupees,
       "title": "Banana",
@@ -120,7 +121,7 @@ class _FruitsScreenState extends State<FruitsScreen> {
       "peiece": "3PC"
     },
     {
-      "color": categoriesFirstColor,
+      "color": categoriesEightColor,
       "image": catekiwi,
       "imageRs": rupees,
       "title": "Pineapple",
@@ -129,7 +130,7 @@ class _FruitsScreenState extends State<FruitsScreen> {
       "peiece": "3PC"
     },
     {
-      "color": categoriesSecondColor,
+      "color": categoriesThirdColor,
       "image": cateStrawberry,
       "imageRs": rupees,
       "title": "Strawberry ",
@@ -138,7 +139,7 @@ class _FruitsScreenState extends State<FruitsScreen> {
       "peiece": "3PC"
     },
     {
-      "color": categoriesEightColor,
+      "color": categoriesSecondColor,
       "titleofffer": "loreim ipsum ",
       "subtitleoffer": "40% OFF",
       "offer": "GROCERY40"
@@ -160,138 +161,171 @@ class _FruitsScreenState extends State<FruitsScreen> {
           crossAxisSpacing: 10,
           itemCount: veglist.length,
           itemBuilder: (context, index) {
-            return Container(
-              decoration: BoxDecoration(
-                color: veglist[index]["color"],
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Column(
-                children: [
-                  if (veglist[index]["image"] != null && veglist[index]["image"] is String)
-                    Image(
-                      height: 148.h,
-                      width: 187.w,
-                      image: AssetImage(veglist[index]["image"] ?? ""),
-                    )
-                  else
-                    Padding(
-                      padding: EdgeInsets.only(top: 20),
-                      child: Text(
-                        veglist[index]["titleofffer"] ?? "", // Provide a default value or handle null case
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
+            return Stack(children: [
+              Container(
+                decoration: BoxDecoration(
+                  color: veglist[index]["color"],
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Column(
+                  children: [
+                    if (veglist[index]["image"] != null &&
+                        veglist[index]["image"] is String)
+                      Padding(
+                        padding: EdgeInsets.only(top: 20),
+                        child: Image(
+                          height: 148.h,
+                          width: 187.w,
+                          image: AssetImage(veglist[index]["image"] ?? ""),
+                        ),
+                      )
+                    else
+                      Padding(
+                        padding: EdgeInsets.only(top: 20),
+                        child: Text(
+                          veglist[index]["titleofffer"] ??
+                              "", // Provide a default value or handle null case
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
-                    ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        if (veglist[index]["title"] != null && veglist[index]["title"] is String)
-                          Text(veglist[index]["title"] ?? "",
-                              style: const TextStyle(
-                                  color: Colors.black,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          if (veglist[index]["title"] != null &&
+                              veglist[index]["title"] is String)
+                            Text(veglist[index]["title"] ?? "",
+                                style: const TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 24))
+                          else
+                            Center(
+                              child: Text(
+                                veglist[index]["titleofffer"] ??
+                                    "", // Provide a default value or handle null case
+                                style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 24))
-                        else
-                          Center(
-                            child: Text(
-                              veglist[index]["titleofffer"] ?? "", // Provide a default value or handle null case
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 12,
-                                color: Colors.black,
+                                  fontSize: 12,
+                                  color: Colors.black,
+                                ),
                               ),
                             ),
-                          ),
-                        if (veglist[index]["subtitle"] != null && veglist[index]["subtitle"] is String)
-                          Text(veglist[index]["subtitle"] ?? "",
-                              style: const TextStyle(
-                                  fontSize: 16, color: toOnBoardText2))
-                        else
-                        // Container(
-                        //   height: 30.h,
-                        //   width: 142.w,
-                        //   decoration: BoxDecoration(
-                        //     color: Colors.white,
-                        //     boxShadow: [BoxShadow(color: Color(0xff10CE7B))],
-                        //   ),
-                        //   child: Center(
-                        //     child: Text(
-                        //       veglist[index]["subtitleoffer"] ?? "", // Provide a default value or handle null case
-                        //       style: TextStyle(
-                        //         fontWeight: FontWeight.bold,
-                        //         fontSize: 24,
-                        //         color: Colors.black,
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ),
-                          Column(
-                            children: [
-                              Container(
-                                height: 30.h,
-                                width: 142.w,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  boxShadow: [BoxShadow(color: Color(0xff10CE7B))],
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    veglist[index]["offer"] ?? "", // Provide a default value or handle null case
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
-                                      color: Colors.black,
+                          if (veglist[index]["subtitle"] != null &&
+                              veglist[index]["subtitle"] is String)
+                            Text(veglist[index]["subtitle"] ?? "",
+                                style: const TextStyle(
+                                    fontSize: 16, color: toOnBoardText2))
+                          else
+                          // Container(
+                          //   height: 30.h,
+                          //   width: 142.w,
+                          //   decoration: BoxDecoration(
+                          //     color: Colors.white,
+                          //     boxShadow: [BoxShadow(color: Color(0xff10CE7B))],
+                          //   ),
+                          //   child: Center(
+                          //     child: Text(
+                          //       veglist[index]["subtitleoffer"] ?? "", // Provide a default value or handle null case
+                          //       style: TextStyle(
+                          //         fontWeight: FontWeight.bold,
+                          //         fontSize: 24,
+                          //         color: Colors.black,
+                          //       ),
+                          //     ),
+                          //   ),
+                          // ),
+                            Column(
+                              children: [
+                                Container(
+                                  height: 30.h,
+                                  width: 142.w,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    boxShadow: [
+                                      BoxShadow(color: Color(0xff10CE7B))
+                                    ],
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      veglist[index]["offer"] ??
+                                          "", // Provide a default value or handle null case
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20,
+                                        color: Colors.black,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                      ],
+                              ],
+                            ),
+                        ],
+                      ),
                     ),
-                  ),
-                  10.verticalSpace,
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
-                    child: Row(
-                      children: [
-                        if (veglist[index]["imageRs"] != null && veglist[index]["imageRs"] is String)
-                          Image(
-                            image: AssetImage(veglist[index]["imageRs"] ?? ""),
-                          )
-                        else
-                          Text(""),
-                        if (veglist[index]["price"] != null && veglist[index]["price"] is int)
+                    10.verticalSpace,
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: Row(
+                        children: [
+                          if (veglist[index]["imageRs"] != null &&
+                              veglist[index]["imageRs"] is String)
+                            Image(
+                              image:
+                              AssetImage(veglist[index]["imageRs"] ?? ""),
+                            )
+                          else
+                            Text(""),
+                          if (veglist[index]["price"] != null &&
+                              veglist[index]["price"] is int)
+                            Text(
+                              veglist[index]["price"].toString() ??
+                                  "", // Use the ?. operator to handle null
+                              style: const TextStyle(color: Colors.black),
+                            )
+                          else
+                            Text(""),
+                          70.horizontalSpace,
                           Text(
-                            veglist[index]["price"].toString() ?? "", // Use the ?. operator to handle null
+                            veglist[index]["peiece"] ?? "",
                             style: const TextStyle(color: Colors.black),
-                          )
-                        else
-                          Text(""),
-                        70.horizontalSpace,
-                        Text(
-                          veglist[index]["peiece"] ?? "",
-                          style: const TextStyle(color: Colors.black),
-                        ),
-                      ],
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  20.verticalSpace,
-                ],
+                    20.verticalSpace,
+                  ],
+                ),
               ),
-
-            );
+              Positioned(
+                  left: 130,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MainProductPage(
+                                index: index,
+                              )));
+                    },
+                    child: Container(
+                      width: 44.w,
+                      height: 44.h,
+                      decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.5),
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Icon(Icons.add),
+                    ),
+                  ))
+            ]);
           },
         ),
       ),
     );
   }
 }
-
-
-

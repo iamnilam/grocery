@@ -18,75 +18,71 @@ class DasboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
         appBar: buildAppBarCustom(),
-
         drawer: Drawer(),
         body: SingleChildScrollView(
-      child: Column(
-        children: [
-          Column(
+          child: Column(
             children: [
-              //our categories
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: Column(
-                  children: [
-                    OurProductScreen(),
-                    HomeProductScreen(),
-                    10.verticalSpace,
-                    Container(
-                      height: 143.h,
-                      width: 421.w,
-                      decoration: const BoxDecoration(
-                          image: DecorationImage(
-                        image: ExactAssetImage(bannerImage1),
-                      )),
+              Column(
+                children: [
+                  //our categories
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      children: [
+                        OurProductScreen(),
+                        HomeProductScreen(),
+                        10.verticalSpace,
+                        Container(
+                          height: 143.h,
+                          width: 421.w,
+                          decoration: const BoxDecoration(
+                              image: DecorationImage(
+                            image: ExactAssetImage(bannerImage1),
+                          )),
+                        ),
+                        10.verticalSpace,
+                        BestDealScreen(bestDail: bestDail),
+                        SizedBox(
+                          height: 203.h,
+                          width: 364.w,
+                          child: const Image(
+                            image: AssetImage(bannerImage2),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 203.h,
+                          width: 364.w,
+                          child: const Image(
+                            image: AssetImage(bannerImage3),
+                          ),
+                        ),
+                        TopDealMarchScreen(homeProduct: homeProduct),
+                        10.verticalSpace,
+                        GreenGroceryScreen(greenGrocer: greenGrocer),
+                        20.verticalSpace,
+                        Container(
+                          width: 364.w,
+                          height: 172.5.h,
+                          decoration: const BoxDecoration(
+                              image: DecorationImage(
+                            image: AssetImage("assets/images/Group 915.png"),
+                          )),
+                        ),
+                        10.verticalSpace,
+                        const DryFruitScreen(),
+                        20.verticalSpace,
+                        HygieneProductScreen(hygieneProduct: hygieneProduct)
+                      ],
                     ),
-                    10.verticalSpace,
-                    BestDealScreen(bestDail: bestDail),
-                    SizedBox(
-                      height: 203.h,
-                      width: 364.w,
-                      child: const Image(
-                        image: AssetImage(bannerImage2),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 203.h,
-                      width: 364.w,
-                      child: const Image(
-                        image: AssetImage(bannerImage3),
-                      ),
-                    ),
-                    TopDealMarchScreen(homeProduct: homeProduct),
-                    10.verticalSpace,
-                    GreenGroceryScreen(greenGrocer: greenGrocer),
-                    20.verticalSpace,
-                    Container(
-                      width: 364.w,
-                      height: 172.5.h,
-                      decoration: const BoxDecoration(
-                          image: DecorationImage(
-                        image: AssetImage("assets/images/Group 915.png"),
-                      )),
-                    ),
-                    10.verticalSpace,
-                    const DryFruitScreen(),
-                    20.verticalSpace,
-                    HygieneProductScreen(hygieneProduct: hygieneProduct)
-                  ],
-                ),
+                  )
+                ],
               )
             ],
-          )
-        ],
-      ),
-    ));
+          ),
+        ));
   }
-
-
 
   List homeProduct = [
     {"image": productBanana, "title": "Fresh Banana"},
@@ -184,7 +180,3 @@ class DasboardScreen extends StatelessWidget {
     },
   ];
 }
-
-
-
-

@@ -32,7 +32,7 @@ class HomePageHeader extends StatelessWidget {
                 height: 215.h,
                 image: const AssetImage(dashboardMainFruits),
               )),
-           Positioned(
+          Positioned(
               top: 350,
               left: 30,
               right: 30,
@@ -80,7 +80,8 @@ class HomePageHeader extends StatelessWidget {
               height: 33.h,
               width: 325.w,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.r), color: Colors.white),
+                  borderRadius: BorderRadius.circular(10.r),
+                  color: Colors.white),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -90,7 +91,7 @@ class HomePageHeader extends StatelessWidget {
                       image: const AssetImage(
                         "assets/images/searchIcon.png",
                       )),
-                   Text(
+                  Text(
                     "Search Products                             ",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,

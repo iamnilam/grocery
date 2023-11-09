@@ -4,6 +4,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:grocery/src/constants/colors.dart';
 import 'package:grocery/src/constants/images.dart';
 import 'package:grocery/src/features/authentication/screens/category/categoristab.dart';
+import 'package:grocery/src/features/authentication/screens/product/productScreen.dart';
 
 class SnacksScreen extends StatefulWidget {
   SnacksScreen({super.key});
@@ -13,132 +14,151 @@ class SnacksScreen extends StatefulWidget {
 }
 
 class _SnacksScreenState extends State<SnacksScreen> {
-  List<Map<String, dynamic>> veglist = [
+  List<Map<String, dynamic>> snackslist = [
     {
       "color": categoriesFirstColor,
-      "image": catekiwi,
+      "image": snacks1,
       "imageRs": rupees,
-      "title": "Kiwi",
-      "subtitle": "Lorem Ipsum is simply",
-      "price": 99,
-      "peiece": "3PC"
-    },
-    {
-      "color": categoriesEightColor,
-      "title": "loreim ipsum ",
-      "subtitle": "40% OFF",
-      "offer": "GROCERY40"
-    },
-    {
-      "color": categoriesThirdColor,
-      "image": cateAvacado,
-      "imageRs": rupees,
-      "title": "Avacado",
-      "subtitle": "Lorem Ipsum is simply",
-      "price": 99,
-      "peiece": "3PC",
-    },
-    {
-      "color": categoriesFiveColor,
-      "image": catePapaya,
-      "imageRs": rupees,
-      "title": "Papaya",
-      "subtitle": "Lorem Ipsum is simply",
-      "price": 99,
-      "peiece": "3PC",
-    },
-    {
-      "color": categoriesSixColor,
-      "image": cateMango,
-      "imageRs": rupees,
-      "title": "Mango",
-      "subtitle": "Lorem Ipsum is simply",
-      "price": 99,
-      "peiece": "3PC",
-    },
-    {
-      "color": categoriesSevenColor,
-      "image": cateStrawberry,
-      "imageRs": rupees,
-      "title": "Strawberry ",
-      "subtitle": "Lorem Ipsum is simply",
-      "price": 99,
-      "peiece": "3PC"
-    },
-    {
-      "color": categoriesEightColor,
-      "image": cateGraps,
-      "imageRs": rupees,
-      "title": "Graps",
-      "subtitle": "Lorem Ipsum is simply",
-      "price": 99,
-      "peiece": "3PC",
-    },
-    {
-      "color": categoriesEightColor,
-      "image": cateBlueberrie,
-      "imageRs": rupees,
-      "title": "Blueberrie",
-      "subtitle": "Lorem Ipsum is simply",
-      "price": 99,
-      "peiece": "3PC",
-    },
-    {
-      "color": categoriesThirdColor,
-      "image": cateAvacado,
-      "imageRs": rupees,
-      "title": "Avacado",
-      "subtitle": "Lorem Ipsum is simply",
-      "price": 99,
-      "peiece": "3PC",
-    },
-    {
-      "color": categoriesFirstColor,
-      "image": cateChikoo,
-      "imageRs": rupees,
-      "title": "Chikoo",
-      "subtitle": "Lorem Ipsum is simply",
-      "price": 99,
-      "peiece": "3PC",
-    },
-    {
-      "color": categoriesSixColor,
-      "image": cateMango,
-      "imageRs": rupees,
-      "title": "Mango",
-      "subtitle": "Lorem Ipsum is simply",
-      "price": 99,
-      "peiece": "3PC",
-    },
-    {
-      "color": categoriesFirstColor,
-      "image": cateBanana,
-      "imageRs": rupees,
-      "title": "Banana",
-      "subtitle": "Lorem Ipsum is simply",
-      "price": 99,
-      "peiece": "3PC"
-    },
-    {
-      "color": categoriesFirstColor,
-      "image": catekiwi,
-      "imageRs": rupees,
-      "title": "Pineapple",
+      "title": "Khatta mitha",
       "subtitle": "Lorem Ipsum is simply",
       "price": 99,
       "peiece": "3PC"
     },
     {
       "color": categoriesSecondColor,
-      "image": cateStrawberry,
+      "title": "loreim ipsum ",
+      "subtitle": "40% OFF",
+      "offer": "GROCERY40"
+    },
+    {
+      "color": categoriesFourColor,
+      "image": snacks2,
       "imageRs": rupees,
-      "title": "Strawberry ",
+      "title": "Cheetos",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC",
+    },
+    {
+      "color": categoriesThirdColor,
+      "image": snacks3,
+      "imageRs": rupees,
+      "title": "Party mix",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC",
+    },
+    {
+      "color": categoriesSixColor,
+      "image": snacks4,
+      "imageRs": rupees,
+      "title": "Chips",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC",
+    },
+    {
+      "color": categoriesFiveColor,
+      "image": snacks5,
+      "imageRs": rupees,
+      "title": "Maggie ",
       "subtitle": "Lorem Ipsum is simply",
       "price": 99,
       "peiece": "3PC"
     },
     {
       "color": categoriesEightColor,
+      "image": snacks6,
+      "imageRs": rupees,
+      "title": "Lay's",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC",
+    },
+    {
+      "color": categoriesSevenColor,
+      "image": snacks7,
+      "imageRs": rupees,
+      "title": "Tedhe medhe",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC",
+    },
+    {
+      "color": categorieselevenColor,
+      "image": snacks8,
+      "imageRs": rupees,
+      "title": "Pingles",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC",
+    },
+    {
+      "color": categoriesThirdColor,
+      "image": snacks9,
+      "imageRs": rupees,
+      "title": "Rings",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC",
+    },
+    {
+      "color": categoriesFiveColor,
+      "image": snacks10,
+      "imageRs": rupees,
+      "title": "Doritos",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC",
+    },
+    {
+      "color": categoriesSixColor,
+      "image": snacks11,
+      "imageRs": rupees,
+      "title": "Hot Chips",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC"
+    },
+    {
+      "color": categoriesSevenColor,
+      "image": snacks12,
+      "imageRs": rupees,
+      "title": "Pasta",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC"
+    },
+    {
+      "color": categorieselevenColor,
+      "image": snacks13,
+      "imageRs": rupees,
+      "title": "Khata mitha ",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC"
+    },
+    {
+      "color": categoriesEightColor,
+      "image": snacks14,
+      "imageRs": rupees,
+      "title": "Shin cup",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC"
+    },
+    {
+      "color": categoriesThirdColor,
+      "image": snacks15,
+      "imageRs": rupees,
+      "title": "Doritos",
+      "subtitle": "Lorem Ipsum is simply",
+      "price": 99,
+      "peiece": "3PC"
+    },
+    {
+      "color": categoriesSecondColor,
+      "image": snacks16,
       "titleofffer": "loreim ipsum ",
       "subtitleoffer": "40% OFF",
       "offer": "GROCERY40"
@@ -158,140 +178,173 @@ class _SnacksScreenState extends State<SnacksScreen> {
           staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
-          itemCount: veglist.length,
+          itemCount: snackslist.length,
           itemBuilder: (context, index) {
-            return Container(
-              decoration: BoxDecoration(
-                color: veglist[index]["color"],
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Column(
-                children: [
-                  if (veglist[index]["image"] != null && veglist[index]["image"] is String)
-                    Image(
-                      height: 148.h,
-                      width: 187.w,
-                      image: AssetImage(veglist[index]["image"] ?? ""),
-                    )
-                  else
-                    Padding(
-                      padding: EdgeInsets.only(top: 20),
-                      child: Text(
-                        veglist[index]["titleofffer"] ?? "", // Provide a default value or handle null case
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
+            return Stack(children: [
+              Container(
+                decoration: BoxDecoration(
+                  color: snackslist[index]["color"],
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Column(
+                  children: [
+                    if (snackslist[index]["image"] != null &&
+                        snackslist[index]["image"] is String)
+                      Padding(
+                        padding: EdgeInsets.only(top: 20),
+                        child: Image(
+                          height: 148.h,
+                          width: 187.w,
+                          image: AssetImage(snackslist[index]["image"] ?? ""),
+                        ),
+                      )
+                    else
+                      Padding(
+                        padding: EdgeInsets.only(top: 20),
+                        child: Text(
+                          snackslist[index]["titleofffer"] ??
+                              "", // Provide a default value or handle null case
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
-                    ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        if (veglist[index]["title"] != null && veglist[index]["title"] is String)
-                          Text(veglist[index]["title"] ?? "",
-                              style: const TextStyle(
-                                  color: Colors.black,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          if (snackslist[index]["title"] != null &&
+                              snackslist[index]["title"] is String)
+                            Text(snackslist[index]["title"] ?? "",
+                                style: const TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 24))
+                          else
+                            Center(
+                              child: Text(
+                                snackslist[index]["titleofffer"] ??
+                                    "", // Provide a default value or handle null case
+                                style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 24))
-                        else
-                          Center(
-                            child: Text(
-                              veglist[index]["titleofffer"] ?? "", // Provide a default value or handle null case
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 12,
-                                color: Colors.black,
+                                  fontSize: 12,
+                                  color: Colors.black,
+                                ),
                               ),
                             ),
-                          ),
-                        if (veglist[index]["subtitle"] != null && veglist[index]["subtitle"] is String)
-                          Text(veglist[index]["subtitle"] ?? "",
-                              style: const TextStyle(
-                                  fontSize: 16, color: toOnBoardText2))
-                        else
-                        // Container(
-                        //   height: 30.h,
-                        //   width: 142.w,
-                        //   decoration: BoxDecoration(
-                        //     color: Colors.white,
-                        //     boxShadow: [BoxShadow(color: Color(0xff10CE7B))],
-                        //   ),
-                        //   child: Center(
-                        //     child: Text(
-                        //       veglist[index]["subtitleoffer"] ?? "", // Provide a default value or handle null case
-                        //       style: TextStyle(
-                        //         fontWeight: FontWeight.bold,
-                        //         fontSize: 24,
-                        //         color: Colors.black,
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ),
-                          Column(
-                            children: [
-                              Container(
-                                height: 30.h,
-                                width: 142.w,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  boxShadow: [BoxShadow(color: Color(0xff10CE7B))],
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    veglist[index]["offer"] ?? "", // Provide a default value or handle null case
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
-                                      color: Colors.black,
+                          if (snackslist[index]["subtitle"] != null &&
+                              snackslist[index]["subtitle"] is String)
+                            Text(snackslist[index]["subtitle"] ?? "",
+                                style: const TextStyle(
+                                    fontSize: 16, color: toOnBoardText2))
+                          else
+                          // Container(
+                          //   height: 30.h,
+                          //   width: 142.w,
+                          //   decoration: BoxDecoration(
+                          //     color: Colors.white,
+                          //     boxShadow: [BoxShadow(color: Color(0xff10CE7B))],
+                          //   ),
+                          //   child: Center(
+                          //     child: Text(
+                          //       veglist[index]["subtitleoffer"] ?? "", // Provide a default value or handle null case
+                          //       style: TextStyle(
+                          //         fontWeight: FontWeight.bold,
+                          //         fontSize: 24,
+                          //         color: Colors.black,
+                          //       ),
+                          //     ),
+                          //   ),
+                          // ),
+                            Column(
+                              children: [
+                                Container(
+                                  height: 30.h,
+                                  width: 142.w,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    boxShadow: [
+                                      BoxShadow(color: Color(0xff10CE7B))
+                                    ],
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                      snackslist[index]["offer"] ??
+                                          "", // Provide a default value or handle null case
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 20,
+                                        color: Colors.black,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                      ],
+                              ],
+                            ),
+                        ],
+                      ),
                     ),
-                  ),
-                  10.verticalSpace,
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
-                    child: Row(
-                      children: [
-                        if (veglist[index]["imageRs"] != null && veglist[index]["imageRs"] is String)
-                          Image(
-                            image: AssetImage(veglist[index]["imageRs"] ?? ""),
-                          )
-                        else
-                          Text(""),
-                        if (veglist[index]["price"] != null && veglist[index]["price"] is int)
+                    10.verticalSpace,
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: Row(
+                        children: [
+                          if (snackslist[index]["imageRs"] != null &&
+                              snackslist[index]["imageRs"] is String)
+                            Image(
+                              image:
+                              AssetImage(snackslist[index]["imageRs"] ?? ""),
+                            )
+                          else
+                            Text(""),
+                          if (snackslist[index]["price"] != null &&
+                              snackslist[index]["price"] is int)
+                            Text(
+                              snackslist[index]["price"].toString() ??
+                                  "", // Use the ?. operator to handle null
+                              style: const TextStyle(color: Colors.black),
+                            )
+                          else
+                            Text(""),
+                          70.horizontalSpace,
                           Text(
-                            veglist[index]["price"].toString() ?? "", // Use the ?. operator to handle null
+                            snackslist[index]["peiece"] ?? "",
                             style: const TextStyle(color: Colors.black),
-                          )
-                        else
-                          Text(""),
-                        70.horizontalSpace,
-                        Text(
-                          veglist[index]["peiece"] ?? "",
-                          style: const TextStyle(color: Colors.black),
-                        ),
-                      ],
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                  20.verticalSpace,
-                ],
+                    20.verticalSpace,
+                  ],
+                ),
               ),
-
-            );
+              Positioned(
+                  left: 130,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => MainProductPage(
+                                index: index,
+                              )));
+                    },
+                    child: Container(
+                      width: 44.w,
+                      height: 44.h,
+                      decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.5),
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Icon(Icons.add),
+                    ),
+                  ))
+            ]);
           },
         ),
       ),
     );
   }
 }
-
-
-

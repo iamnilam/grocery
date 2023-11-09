@@ -260,7 +260,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     onTap: () {},
                     child: Container(
                       padding: EdgeInsets.only(top: 100.w),
-                      child:Text(
+                      child: Text(
                         "Already have account? Log in",
                         style: TextStyle(
                             color: toOnBoardText2,

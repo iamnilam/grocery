@@ -31,6 +31,6 @@ const categoriesFiveColor = Color(0xFFEAD676);
 const categoriesSixColor = Color(0xFFE7A7A7);
 const categoriesSevenColor = Color(0xFFD79AD1);
 const categoriesEightColor = Color(0xFFB8CBE5);
-
-
-
+const categoriesnineColor = Color(0xFFFFC6E4);
+const categoriestenColor = Color(0xFFFEAF76);
+const categorieselevenColor = Color(0xFFD8C39C);

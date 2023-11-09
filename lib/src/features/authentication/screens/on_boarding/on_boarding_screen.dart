@@ -115,7 +115,7 @@ class _OnBoardingState extends State<OnBoarding> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                 Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
@@ -167,7 +167,7 @@ class _OnBoardingState extends State<OnBoarding> {
                   height: 100.h,
                   child: PageView(
                     controller: textController,
-                    children:  [
+                    children: [
                       Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -242,7 +242,7 @@ class _OnBoardingState extends State<OnBoarding> {
                   height: 70.h,
                   child: PageView(
                     controller: descriptionController,
-                    children:  [
+                    children: [
                       Text(
                         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet ut nec vitae gravida ullamcorper .',
                         style: TextStyle(

@@ -13,7 +13,7 @@ class GreenGroceryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-         Center(
+        Center(
           child: Text(
             "The Green Grocer",
             style: TextStyle(

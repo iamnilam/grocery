@@ -4,24 +4,45 @@ import 'package:grocery/src/features/authentication/screens/on_boarding/dashboar
 import 'package:grocery/src/features/authentication/screens/viewCart/view_cart.dart';
 import 'package:intl/intl.dart';
 
-class MainProductPage extends StatefulWidget {
-  const MainProductPage({super.key});
-
-  @override
-  State<MainProductPage> createState() => _MainProductPageState();
-}
-
-class _MainProductPageState extends State<MainProductPage> {
-  void currency() {
-    Locale locale = Localizations.localeOf(context);
-    var format = NumberFormat.simpleCurrency(locale: locale.toString());
-    print("CURRENCY SYMBOL ${format.currencySymbol}"); // $
-    print("CURRENCY NAME ${format.currencyName}"); // USD
-  }
+class MainProductPage extends StatelessWidget {
+  var index;
+  MainProductPage({
+    super.key,
+    required this.index,
+  });
 
   @override
   Widget build(BuildContext context) {
+    var name;
+    if (index == 1) {
+      name = "Potato";
+    } else if (index == 2) {
+      name = "Potato";
+    } else if (index == 3) {
+      name = "Potato";
+    } else if (index == 4) {
+      name = "Potato";
+    } else if (index == 5) {
+      name = "Potato";
+    } else if (index == 6) {
+      name = "Potato";
+    } else if (index == 7) {
+      name = "Potato";
+    }
+
     return Scaffold(
+        appBar: AppBar(
+          elevation: 0,
+        backgroundColor: Colors.white,
+        leading: Padding(
+        padding: const EdgeInsets.only(bottom: 30),
+    child: InkWell(
+    onTap: () {
+    Navigator.pop(context);
+    },
+    child: Icon(color: Color(0xFF858585), Icons.arrow_back_sharp),
+    ))),
+
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
@@ -73,8 +94,8 @@ class _MainProductPageState extends State<MainProductPage> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      const Text(
-                                        "Kiwi - 1 kg",
+                                      Text(
+                                        "$name",
                                         style: TextStyle(
                                             color: Colors.black,
                                             fontFamily: "LibreFranklin",
@@ -111,7 +132,7 @@ class _MainProductPageState extends State<MainProductPage> {
                               ),
                             ],
                           ),
-                           Image(
+                          Image(
                               width: 40.83.w,
                               height: 50.6.h,
                               image: const AssetImage(
@@ -122,7 +143,7 @@ class _MainProductPageState extends State<MainProductPage> {
                       //select unit
                       Column(
                         children: [
-                           Row(
+                          Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -227,7 +248,8 @@ class _MainProductPageState extends State<MainProductPage> {
                                     height: 75.h,
                                     decoration: BoxDecoration(
                                         color: const Color(0xffF7F7F7),
-                                        borderRadius: BorderRadius.circular(10.r),
+                                        borderRadius:
+                                            BorderRadius.circular(10.r),
                                         boxShadow: [
                                           BoxShadow(
                                               color:
@@ -295,7 +317,7 @@ class _MainProductPageState extends State<MainProductPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                     Text(
+                    Text(
                       "Product Details",
                       style: TextStyle(
                         fontSize: 26.sp,
@@ -304,7 +326,7 @@ class _MainProductPageState extends State<MainProductPage> {
                       ),
                     ),
                     10.verticalSpace,
-                     Text(
+                    Text(
                         "vibrant green flesh. Here are some key product details",
                         style: TextStyle(
                             fontFamily: "LibreFranklin",
@@ -542,9 +564,10 @@ class _MainProductPageState extends State<MainProductPage> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                           Text(
+                          Text(
                             "1 Kg",
-                            style: TextStyle(fontSize: 15.sp, color: Colors.black),
+                            style:
+                                TextStyle(fontSize: 15.sp, color: Colors.black),
                           ),
                           Row(
                             children: [

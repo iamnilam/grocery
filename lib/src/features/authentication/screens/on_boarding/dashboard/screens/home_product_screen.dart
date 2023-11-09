@@ -54,7 +54,7 @@ class _HomeProductScreenState extends State<HomeProductScreen> {
                   Center(
                       child: Text("${widget.homeProduct[index]["title"]}",
                           textAlign: TextAlign.center,
-                          style:  TextStyle(
+                          style: TextStyle(
                             fontSize: 12.sp,
                             color: Colors.black,
                           ))),
@@ -71,7 +71,9 @@ class _HomeProductScreenState extends State<HomeProductScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => MainProductPage()));
+                                builder: (context) => MainProductPage(
+                                      index: index,
+                                    )));
                       },
                       child: const Center(
                         child: Text(

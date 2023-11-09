@@ -54,7 +54,7 @@ class DryFruitScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                         Text(
+                        Text(
                           "Assorted seeds For \nA Healthy Living",
                           style: TextStyle(
                               fontFamily: "LibreFranklin",

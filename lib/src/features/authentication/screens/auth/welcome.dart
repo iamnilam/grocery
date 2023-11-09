@@ -21,7 +21,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         body: SingleChildScrollView(
       child: Column(
         children: [
-
           Center(
             child: SizedBox(
               child: Center(
