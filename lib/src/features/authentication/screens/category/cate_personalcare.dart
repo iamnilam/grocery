@@ -26,10 +26,12 @@ class _PersonalCareScreenState extends State<PersonalCareScreen> {
     },
     {
       "color": categoriesSecondColor,
-      "title": "loreim ipsum ",
-      "subtitle": "40% OFF",
-      "offer": "GROCERY40"
+      "ftitle": "loreim ipsum ",
+      "fsub": "40% OFF",
+      "offer": "GROCERY40",
+      "fcontent": "Lorem Ipsum is \nsimply"
     },
+
     {
       "color": categoriesFourColor,
       "image": personalCare2,
@@ -158,12 +160,12 @@ class _PersonalCareScreenState extends State<PersonalCareScreen> {
     },
     {
       "color": categoriesSecondColor,
-      "image": personalCare16,
+      "fimage": personalCare16,
       "offer": "GROCERY40"
     },
   ];
 
-  bool defaultText = true;
+  bool ftitle = true;
   bool loading = true;
 
   @override
@@ -186,29 +188,29 @@ class _PersonalCareScreenState extends State<PersonalCareScreen> {
                 ),
                 child: Column(
                   children: [
-                    if (personalCarelist[index]["image"] != null &&
-                        personalCarelist[index]["image"] is String)
                       Padding(
                         padding: EdgeInsets.only(top: 20),
-                        child: Image(
-                          height: 148.h,
-                          width: 187.w,
-                          image: AssetImage(personalCarelist[index]["image"] ?? ""),
-                        ),
-                      )
-                    else
-                      Padding(
-                        padding: EdgeInsets.only(top: 20),
-                        child: Text(
-                          personalCarelist[index]["titleofffer"] ??
-                              "", // Provide a default value or handle null case
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                          ),
+                        child: Column(
+                          children: [
+                        if (personalCarelist[index]["image"] != null &&
+                            personalCarelist[index]["image"] is String)
+                            Image(
+                              height: 148.h,
+                              width: 187.w,
+                              image: AssetImage(personalCarelist[index]["image"] ?? ""),
+                            )
+                            else if(personalCarelist[index]["fimage"] != null &&
+                            personalCarelist[index]["fimage"] is String)
+                          Image(
+                            height: 50.h,
+                            width: 150.w,
+                            image: AssetImage(personalCarelist[index]["fimage"] ?? ""),
+                          )else Text("")
+
+                          ],
                         ),
                       ),
+
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Column(
@@ -222,16 +224,31 @@ class _PersonalCareScreenState extends State<PersonalCareScreen> {
                                     fontWeight: FontWeight.bold,
                                     fontSize: 24))
                           else
-                            Center(
-                              child: Text(
-                                personalCarelist[index]["titleofffer"] ??
-                                    "", // Provide a default value or handle null case
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12,
-                                  color: Colors.black,
+                            Column(
+                              children: [
+                                Center(
+                                  child: Text(
+                                    personalCarelist[index]["ftitle"] ??
+                                        "", // Provide a default value or handle null case
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12,
+                                      color: Colors.black,
+                                    ),
+                                  ),
                                 ),
-                              ),
+                                Center(
+                                  child: Text(
+                                    personalCarelist[index]["fsub"] ??
+                                        "", // Provide a default value or handle null case
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 24,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           if (personalCarelist[index]["subtitle"] != null &&
                               personalCarelist[index]["subtitle"] is String)
@@ -239,24 +256,6 @@ class _PersonalCareScreenState extends State<PersonalCareScreen> {
                                 style: const TextStyle(
                                     fontSize: 16, color: toOnBoardText2))
                           else
-                          // Container(
-                          //   height: 30.h,
-                          //   width: 142.w,
-                          //   decoration: BoxDecoration(
-                          //     color: Colors.white,
-                          //     boxShadow: [BoxShadow(color: Color(0xff10CE7B))],
-                          //   ),
-                          //   child: Center(
-                          //     child: Text(
-                          //       veglist[index]["subtitleoffer"] ?? "", // Provide a default value or handle null case
-                          //       style: TextStyle(
-                          //         fontWeight: FontWeight.bold,
-                          //         fontSize: 24,
-                          //         color: Colors.black,
-                          //       ),
-                          //     ),
-                          //   ),
-                          // ),
                             Column(
                               children: [
                                 Container(
@@ -280,6 +279,14 @@ class _PersonalCareScreenState extends State<PersonalCareScreen> {
                                     ),
                                   ),
                                 ),
+                                if (personalCarelist[index]["fcontent"] != null &&
+                                    personalCarelist[index]["fcontent"] is String)
+                                Padding(
+                                  padding: const EdgeInsets.all(5),
+                                  child: Center(child: Text(personalCarelist[index]["fcontent"] ?? "",style: TextStyle(color: Color(0xff707070)),)),
+                                )
+                                else
+                                  Center(child: Text(personalCarelist[index]["fcontent"] ?? "",style: TextStyle(color: Color(0xff707070)),))
                               ],
                             ),
                         ],
@@ -315,7 +322,7 @@ class _PersonalCareScreenState extends State<PersonalCareScreen> {
                         ],
                       ),
                     ),
-                    20.verticalSpace,
+                    10.verticalSpace,
                   ],
                 ),
               ),
