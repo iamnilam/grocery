@@ -3,8 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:grocery/src/constants/colors.dart';
 import 'package:grocery/src/constants/images.dart';
-import 'package:grocery/src/features/authentication/screens/category/categoristab.dart';
-import 'package:grocery/src/features/authentication/screens/product/productScreen.dart';
+import 'package:grocery/src/features/authentication/screens/product/productFruitsScreen.dart';
 
 class FruitsScreen extends StatefulWidget {
   FruitsScreen({super.key});
@@ -321,7 +320,7 @@ class _FruitsScreenState extends State<FruitsScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => MainProductPage(
+                              builder: (context) => ProductFruitsPage(
                                     index: index,
                                   )));
                     },

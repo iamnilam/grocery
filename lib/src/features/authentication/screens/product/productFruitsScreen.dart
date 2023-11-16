@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:grocery/src/constants/images.dart';
 import 'package:grocery/src/features/authentication/screens/on_boarding/dashboard/screens/home_product_screen.dart';
 import 'package:grocery/src/features/authentication/screens/viewCart/view_cart.dart';
 import 'package:intl/intl.dart';
 
-class MainProductPage extends StatelessWidget {
+class ProductFruitsPage extends StatelessWidget {
   var index;
-  MainProductPage({
+  ProductFruitsPage({
     super.key,
     required this.index,
   });
@@ -14,20 +15,46 @@ class MainProductPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var name;
-    if (index == 1) {
-      name = "Potato";
+    String image = "";
+    if (index == 0) {
+      name = "Kiwi";
+      image = catekiwi;
     } else if (index == 2) {
-      name = "Potato";
+      name = "Avacado  ";
+      image = cateAvacado;
     } else if (index == 3) {
-      name = "Potato";
+      name = "Papaya ";
+      image = catePapaya;
     } else if (index == 4) {
-      name = "Potato";
+      name = "Mango";
+      image = cateMango;
     } else if (index == 5) {
-      name = "Potato";
+      name = "Strawberry";
+      image = cateStrawberry;
     } else if (index == 6) {
-      name = "Potato";
+      name = "Graps";
+      image = cateGraps;
     } else if (index == 7) {
-      name = "Potato";
+      name = "Blueberrie";
+      image = cateBlueberrie;
+    }else if (index == 8) {
+      name = "Avacado";
+      image = cateAvacado;
+    }else if (index == 9) {
+      name = "Chikoo";
+      image = cateChikoo;
+    }else if (index == 10) {
+      name = "Mango ";
+      image = cateMango;
+    }else if (index == 11) {
+      name = "Banana";
+      image = cateBanana;
+    }else if (index == 12) {
+      name = "Pineapple";
+      image = catekiwi;
+    }else if (index == 13) {
+      name = "Strawberry";
+      image = cateStrawberry;
     }
 
     return Scaffold(
@@ -61,14 +88,13 @@ class MainProductPage extends StatelessWidget {
                       color: const Color(0xff707070).withOpacity(0.2),
                     ),
                   ),
-                  const Positioned(
+                   Positioned(
                     top: 0,
                     bottom: 0,
                     left: 30,
                     right: 30,
                     child: Image(
-                      image: AssetImage(
-                          "assets/images/categories/fruits/MainKiwi.png"),
+                      image: AssetImage(image),
                     ),
                   )
                 ],
@@ -95,7 +121,7 @@ class MainProductPage extends StatelessWidget {
                                     children: [
                                       Text(
                                         "$name",
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             color: Colors.black,
                                             fontFamily: "LibreFranklin",
                                             fontWeight: FontWeight.bold),

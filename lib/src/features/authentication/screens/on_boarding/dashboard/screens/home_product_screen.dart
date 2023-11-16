@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery/src/constants/images.dart';
-import 'package:grocery/src/features/authentication/screens/product/productScreen.dart';
+import 'package:grocery/src/features/authentication/screens/product/productVegitablesScreen.dart';
 
 class HomeProductScreen extends StatefulWidget {
   HomeProductScreen({
@@ -71,7 +71,7 @@ class _HomeProductScreenState extends State<HomeProductScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => MainProductPage(
+                                builder: (context) => ProductVegitablesPage(
                                       index: index,
                                     )));
                       },

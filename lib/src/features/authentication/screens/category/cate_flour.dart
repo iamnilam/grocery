@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart'; // Import StaggeredGridView
 import 'package:grocery/src/constants/colors.dart';
 import 'package:grocery/src/constants/images.dart';
-import 'package:grocery/src/features/authentication/screens/product/productScreen.dart';
+import 'package:grocery/src/features/authentication/screens/product/productFlourScreen.dart';
 
 class FlourScreen extends StatefulWidget {
   FlourScreen({Key? key}) : super(key: key);
@@ -338,7 +338,7 @@ class _FlourScreenState extends State<FlourScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => MainProductPage(
+                              builder: (context) => ProductFlourPage(
                                     index: index,
                                   )));
                     },

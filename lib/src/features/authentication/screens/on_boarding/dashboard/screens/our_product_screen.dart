@@ -25,6 +25,7 @@ class OurProductScreen extends StatelessWidget {
     {"image": babycare, "title": "Baby Care Products"},
     {"image": beverages, "title": "Beverages"},
   ];
+
   @override
   Widget build(BuildContext context) {
     return Column(
