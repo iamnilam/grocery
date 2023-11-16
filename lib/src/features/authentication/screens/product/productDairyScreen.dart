@@ -18,7 +18,7 @@ class ProductDairyPage extends StatelessWidget {
     String image = "";
     if (index == 0) {
       name = "Amul Milk";
-      image = vegetables1;
+      image = dairy1;
     } else if (index == 2) {
       name = "Pumpkin  ";
       image = vegetables2;
