@@ -17,49 +17,50 @@ class ProductSnacksPage extends StatelessWidget {
     var name;
     String image = "";
     if (index == 0) {
-      name = "Potato";
-      image = vegetables1;
+      name = "Khatta mitha";
+      image = snacks1;
     } else if (index == 2) {
-      name = "Pumpkin  ";
-      image = vegetables2;
+      name = "Cheetos  ";
+      image = snacks2;
     } else if (index == 3) {
-      name = "Spinach ";
-      image = vegetables3;
+      name = "Party mix ";
+      image = snacks3;
     } else if (index == 4) {
-      name = "Tomato";
-      image = vegetables4;
+      name = "Chips";
+      image = snacks4;
     } else if (index == 5) {
-      name = "Carrot";
-      image = vegetables5;
+      name = "Maggie";
+      image = snacks5;
     } else if (index == 6) {
-      name = "Onion";
-      image = vegetables6;
+      name = "Lay's";
+      image = snacks6;
     } else if (index == 7) {
-      name = "Brinjal";
-      image = vegetables7;
+      name = "Tedhe medhe";
+      image = snacks7;
     }else if (index == 8) {
-      name = "Raddish";
-      image = vegetables8;
+      name = "Pingles";
+      image = snacks8;
     }else if (index == 9) {
-      name = "Cabbage";
-      image = vegetables9;
+      name = "Rings";
+      image = snacks9;
     }else if (index == 10) {
-      name = "Capsicum ";
-      image = vegetables10;
+      name = "Doritos";
+      image = snacks10;
     }else if (index == 11) {
-      name = "Beetroot";
+      name = "Hot Chips";
+      image = snacks11;
     }else if (index == 12) {
-      name = "Red Cabbage";
-      image = vegetables11;
+      name = "Pasta";
+      image = snacks12;
     }else if (index == 13) {
-      name = "Mushroom";
-      image = vegetables12;
+      name = "Khata mitha";
+      image = snacks13;
     }else if (index == 14) {
-      name = "Cucumber";
-      image = vegetables13;
-    }else if (index == 14) {
-      name = "Corn";
-      image = vegetables14;
+      name = "Shin cup";
+      image = snacks14;
+    }else if (index == 15) {
+      name = "Doritos";
+      image = snacks15;
     }
 
     return Scaffold(

@@ -17,46 +17,46 @@ class ProductBabyPage extends StatelessWidget {
     var name;
     String image = "";
     if (index == 0) {
-      name = "Potato";
-      image = vegetables1;
+      name = "Baby care kit";
+      image = babycare1;
     } else if (index == 2) {
-      name = "Pumpkin  ";
-      image = vegetables2;
+      name = "bay shampo  ";
+      image = babycare2;
     } else if (index == 3) {
-      name = "Spinach ";
-      image = vegetables3;
+      name = "baby soap ";
+      image = babycare3;
     } else if (index == 4) {
-      name = "Tomato";
-      image = vegetables4;
+      name = "Baby care kit";
+      image = babycare4;
     } else if (index == 5) {
-      name = "Carrot";
-      image = vegetables5;
+      name = "Wipes";
+      image = babycare5;
     } else if (index == 6) {
-      name = "Onion";
-      image = vegetables6;
+      name = "Baby lotion";
+      image = babycare6;
     } else if (index == 7) {
       name = "Brinjal";
-      image = vegetables7;
+      image = babycare7;
     }else if (index == 8) {
       name = "Raddish";
-      image = vegetables8;
+      image = babycare8;
     }else if (index == 9) {
       name = "Cabbage";
-      image = vegetables9;
+      image = babycare9;
     }else if (index == 10) {
       name = "Capsicum ";
-      image = vegetables10;
+      image = babycare10;
     }else if (index == 11) {
       name = "Beetroot";
     }else if (index == 12) {
       name = "Red Cabbage";
-      image = vegetables11;
+      image = babycare11;
     }else if (index == 13) {
       name = "Mushroom";
-      image = vegetables12;
+      image = babycare12;
     }else if (index == 14) {
       name = "Cucumber";
-      image = vegetables13;
+      image = babycare13;
     }else if (index == 14) {
       name = "Corn";
       image = vegetables14;

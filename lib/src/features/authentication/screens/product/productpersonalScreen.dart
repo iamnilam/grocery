@@ -17,48 +17,48 @@ class ProductPersonalCarePage extends StatelessWidget {
     var name;
     String image = "";
     if (index == 0) {
-      name = "Potato";
-      image = vegetables1;
+      name = "Shampoo";
+      image = personalCare1;
     } else if (index == 2) {
-      name = "Pumpkin  ";
-      image = vegetables2;
+      name = "Dish washer";
+      image = personalCare1;
     } else if (index == 3) {
-      name = "Spinach ";
-      image = vegetables3;
+      name = "Dettol";
+      image = personalCare1;
     } else if (index == 4) {
-      name = "Tomato";
-      image = vegetables4;
+      name = "Vanish";
+      image = personalCare1;
     } else if (index == 5) {
-      name = "Carrot";
-      image = vegetables5;
+      name = "Ariel";
+      image = personalCare1;
     } else if (index == 6) {
-      name = "Onion";
-      image = vegetables6;
+      name = "Clin glanz";
+      image = personalCare1;
     } else if (index == 7) {
-      name = "Brinjal";
-      image = vegetables7;
+      name = "Body lotion";
+      image = personalCare1;
     }else if (index == 8) {
-      name = "Raddish";
-      image = vegetables8;
+      name = "Nivea soft";
+      image = personalCare1;
     }else if (index == 9) {
-      name = "Cabbage";
-      image = vegetables9;
+      name = "Oriflame";
+      image = personalCare1;
     }else if (index == 10) {
-      name = "Capsicum ";
-      image = vegetables10;
+      name = "Dish washer ";
+      image = personalCare1;
     }else if (index == 11) {
-      name = "Beetroot";
+      name = "Bodywash";
     }else if (index == 12) {
-      name = "Red Cabbage";
-      image = vegetables11;
+      name = "Vanish gold";
+      image = personalCare1;
     }else if (index == 13) {
-      name = "Mushroom";
-      image = vegetables12;
+      name = "Shampoo";
+      image = personalCare1;
     }else if (index == 14) {
-      name = "Cucumber";
+      name = "Clin glanz";
       image = vegetables13;
     }else if (index == 14) {
-      name = "Corn";
+      name = "Dettol";
       image = vegetables14;
     }
 

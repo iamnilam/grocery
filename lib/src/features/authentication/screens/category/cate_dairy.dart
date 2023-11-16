@@ -141,7 +141,7 @@ class _DairyScreenState extends State<DairyScreen> {
       "color": categoriesEightColor,
       "image": dairy14,
       "imageRs": rupees,
-      "title": "Milkshake  ",
+      "title": "Milkshake",
       "subtitle": "Lorem Ipsum is simply",
       "price": 99,
       "peiece": "3PC"

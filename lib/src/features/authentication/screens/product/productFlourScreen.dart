@@ -17,49 +17,50 @@ class ProductFlourPage extends StatelessWidget {
     var name;
     String image = "";
     if (index == 0) {
-      name = "Potato";
-      image = vegetables1;
-    } else if (index == 2) {
-      name = "Pumpkin  ";
-      image = vegetables2;
-    } else if (index == 3) {
-      name = "Spinach ";
-      image = vegetables3;
-    } else if (index == 4) {
-      name = "Tomato";
-      image = vegetables4;
-    } else if (index == 5) {
-      name = "Carrot";
-      image = vegetables5;
-    } else if (index == 6) {
-      name = "Onion";
-      image = vegetables6;
-    } else if (index == 7) {
-      name = "Brinjal";
-      image = vegetables7;
-    }else if (index == 8) {
-      name = "Raddish";
-      image = vegetables8;
-    }else if (index == 9) {
-      name = "Cabbage";
-      image = vegetables9;
-    }else if (index == 10) {
-      name = "Capsicum ";
-      image = vegetables10;
-    }else if (index == 11) {
-      name = "Beetroot";
-    }else if (index == 12) {
-      name = "Red Cabbage";
-      image = vegetables11;
-    }else if (index == 13) {
-      name = "Mushroom";
-      image = vegetables12;
-    }else if (index == 14) {
-      name = "Cucumber";
-      image = vegetables13;
-    }else if (index == 14) {
       name = "Corn";
-      image = vegetables14;
+      image = flour1;
+    } else if (index == 2) {
+      name = "Tirupati Rice  ";
+      image = flour2;
+    } else if (index == 3) {
+      name = "Elite atta ";
+      image = flour3;
+    } else if (index == 4) {
+      name = "Oats";
+      image = flour4;
+    } else if (index == 5) {
+      name = "Induz rice";
+      image = flour5;
+    } else if (index == 6) {
+      name = "Fortune rice";
+      image = flour6;
+    } else if (index == 7) {
+      name = "Corn flour";
+      image = flour7;
+    }else if (index == 8) {
+      name = "Chakki atta";
+      image = flour8;
+    }else if (index == 9) {
+      name = "Corn";
+      image = flour9;
+    }else if (index == 10) {
+      name = "Hershes ";
+      image = flour10;
+    }else if (index == 11) {
+      name = "Elite atta";
+      image = flour11;
+    }else if (index == 12) {
+      name = "Oats";
+      image = flour12;
+    }else if (index == 13) {
+      name = "Induz rice";
+      image = flour13;
+    }else if (index == 14) {
+      name = "Shin cup";
+      image = flour14;
+    }else if (index == 15) {
+      name = "Oats";
+      image = flour15;
     }
 
     return Scaffold(

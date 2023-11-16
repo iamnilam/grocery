@@ -17,49 +17,50 @@ class ProductBreakFastPage extends StatelessWidget {
     var name;
     String image = "";
     if (index == 0) {
-      name = "Potato";
-      image = vegetables1;
+      name = "Bread";
+      image = breakfast1;
     } else if (index == 2) {
-      name = "Pumpkin  ";
-      image = vegetables2;
+      name = "Hersheys  ";
+      image = breakfast2;
     } else if (index == 3) {
-      name = "Spinach ";
-      image = vegetables3;
+      name = "Corn Flakes ";
+      image = breakfast3;
     } else if (index == 4) {
-      name = "Tomato";
-      image = vegetables4;
+      name = "Oats";
+      image = breakfast4;
     } else if (index == 5) {
-      name = "Carrot";
-      image = vegetables5;
+      name = "Good day";
+      image = breakfast5;
     } else if (index == 6) {
-      name = "Onion";
-      image = vegetables6;
+      name = "Oats";
+      image = breakfast6;
     } else if (index == 7) {
-      name = "Brinjal";
-      image = vegetables7;
+      name = "Toast";
+      image = breakfast7;
     }else if (index == 8) {
-      name = "Raddish";
-      image = vegetables8;
+      name = "Pingles";
+      image = breakfast8;
     }else if (index == 9) {
-      name = "Cabbage";
-      image = vegetables9;
+      name = "Cake";
+      image = breakfast9;
     }else if (index == 10) {
-      name = "Capsicum ";
-      image = vegetables10;
+      name = "Hershes ";
+      image = breakfast10;
     }else if (index == 11) {
-      name = "Beetroot";
+      name = "Corn flacks";
+      image = breakfast11;
     }else if (index == 12) {
-      name = "Red Cabbage";
-      image = vegetables11;
+      name = "Oats";
+      image = breakfast12;
     }else if (index == 13) {
-      name = "Mushroom";
-      image = vegetables12;
+      name = "Goodday";
+      image = breakfast13;
     }else if (index == 14) {
-      name = "Cucumber";
-      image = vegetables13;
+      name = "Shin cup";
+      image = breakfast14;
     }else if (index == 14) {
-      name = "Corn";
-      image = vegetables14;
+      name = "Toast";
+      image = breakfast15;
     }
 
     return Scaffold(

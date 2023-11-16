@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:grocery/src/constants/images.dart';
 import 'package:grocery/src/features/authentication/screens/on_boarding/dashboard/screens/home_product_screen.dart';
 import 'package:grocery/src/features/authentication/screens/viewCart/view_cart.dart';
-import 'package:intl/intl.dart';
 
 class ProductDairyPage extends StatelessWidget {
   var index;
@@ -23,43 +22,48 @@ class ProductDairyPage extends StatelessWidget {
       name = "Cream  ";
       image = dairy2;
     } else if (index == 3) {
-      name = "Spinach ";
-      image = vegetables3;
+      name = "Butter ";
+      image = dairy3;
     } else if (index == 4) {
-      name = "Tomato";
-      image = vegetables4;
+      name = "Yogurt";
+      image = dairy4;
     } else if (index == 5) {
-      name = "Carrot";
-      image = vegetables5;
+      name = "Cheese";
+      image = dairy5;
     } else if (index == 6) {
-      name = "Onion";
-      image = vegetables6;
+      name = "Custard";
+      image = dairy6;
     } else if (index == 7) {
-      name = "Brinjal";
-      image = vegetables7;
+      name = "Amul Coffe";
+      image = dairy7;
     }else if (index == 8) {
-      name = "Raddish";
-      image = vegetables8;
+      name = "Amul Coffe";
+      image = dairy8;
     }else if (index == 9) {
-      name = "Cabbage";
-      image = vegetables9;
+      name = "Amul Cool";
+      image = dairy9;
     }else if (index == 10) {
-      name = "Capsicum ";
-      image = vegetables10;
+      name = "Buttermilk";
+      image = dairy10;
     }else if (index == 11) {
-      name = "Beetroot";
+      name = "Cold Coffe";
     }else if (index == 12) {
-      name = "Red Cabbage";
-      image = vegetables11;
+      name = "Amul Lassi";
+      image = dairy11;
     }else if (index == 13) {
-      name = "Mushroom";
-      image = vegetables12;
+      name = "Ghee";
+      image = dairy12;
     }else if (index == 14) {
-      name = "Cucumber";
-      image = vegetables13;
-    }else if (index == 14) {
-      name = "Corn";
+      name = "Milkshake";
+      image = dairy13;
+    }
+    else if (index == 14) {
+      name = "Pannier";
       image = vegetables14;
+    }
+    else if (index == 14) {
+      name = "Shrikhand";
+      image = dairy15;
     }
 
     return Scaffold(
