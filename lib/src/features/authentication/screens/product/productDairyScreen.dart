@@ -21,7 +21,7 @@ class ProductDairyPage extends StatelessWidget {
       image = dairy1;
     } else if (index == 2) {
       name = "Cream  ";
-      image = vegetables2;
+      image = dairy2;
     } else if (index == 3) {
       name = "Spinach ";
       image = vegetables3;
