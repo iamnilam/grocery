@@ -88,14 +88,18 @@ class _OnBoardingState extends State<OnBoarding> {
                           });
                         },
                         child: selectedIndex == 2
-                            ? const Text(
-                                'Get Started', // Replace with the text you want to display
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold
-                                    // Add any other text styles you want
-                                    ),
-                              )
+                            ? Padding(
+                              padding: const EdgeInsets.only(bottom: 20,),
+                              child: const Text(
+                                  'Get Started', // Replace with the text you want to display
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 11
+                                      // Add any other text styles you want
+                                      ),
+                                ),
+                            )
                             : Image(
                                 height: 60.h,
                                 width: 60.w,
@@ -345,7 +349,7 @@ class ClipPathClass extends CustomClipper<Path> {
       663.25 * yScaling,
     );
     path.cubicTo(
-      60.9997 * xScaling,
+      70.9997 * xScaling,
       663.25 * yScaling,
       60.9997 * xScaling,
       676.901 * yScaling,
@@ -354,7 +358,7 @@ class ClipPathClass extends CustomClipper<Path> {
     );
     //rounder
     path.cubicTo(
-      60.9997 * xScaling,
+      70.9997 * xScaling,
       610.638 * yScaling,
       0.5 * xScaling,
       595 * yScaling,

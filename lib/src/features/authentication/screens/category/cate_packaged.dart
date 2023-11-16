@@ -14,7 +14,7 @@ class PackagedFoodScreen extends StatefulWidget {
 }
 
 class _PackagedFoodScreenState extends State<PackagedFoodScreen> {
-  List<Map<String, dynamic>> veglist = [
+  List<Map<String, dynamic>> packagedlist = [
     {
       "color": categoriesFirstColor,
       "image": catekiwi,
@@ -159,87 +159,86 @@ class _PackagedFoodScreenState extends State<PackagedFoodScreen> {
           staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
-          itemCount: veglist.length,
+          itemCount: packagedlist.length,
           itemBuilder: (context, index) {
             return Stack(children: [
               Container(
                 decoration: BoxDecoration(
-                  color: veglist[index]["color"],
+                  color: packagedlist[index]["color"],
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Column(
                   children: [
-                    if (veglist[index]["image"] != null &&
-                        veglist[index]["image"] is String)
-                      Padding(
-                        padding: EdgeInsets.only(top: 20),
-                        child: Image(
-                          height: 148.h,
-                          width: 187.w,
-                          image: AssetImage(veglist[index]["image"] ?? ""),
-                        ),
-                      )
-                    else
-                      Padding(
-                        padding: EdgeInsets.only(top: 20),
-                        child: Text(
-                          veglist[index]["titleofffer"] ??
-                              "", // Provide a default value or handle null case
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 20),
+                      child: Column(
+                        children: [
+                          if (packagedlist[index]["image"] != null &&
+                              packagedlist[index]["image"] is String)
+                            Image(
+                              height: 148.h,
+                              width: 187.w,
+                              image: AssetImage(
+                                  packagedlist[index]["image"] ?? ""),
+                            )
+                          else if (packagedlist[index]["fimage"] != null &&
+                              packagedlist[index]["fimage"] is String)
+                            Image(
+                              height: 50.h,
+                              width: 150.w,
+                              image: AssetImage(
+                                  packagedlist[index]["fimage"] ?? ""),
+                            )
+                          else
+                            Text("")
+                        ],
                       ),
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          if (veglist[index]["title"] != null &&
-                              veglist[index]["title"] is String)
-                            Text(veglist[index]["title"] ?? "",
+                          if (packagedlist[index]["title"] != null &&
+                              packagedlist[index]["title"] is String)
+                            Text(packagedlist[index]["title"] ?? "",
                                 style: const TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 24))
                           else
-                            Center(
-                              child: Text(
-                                veglist[index]["titleofffer"] ??
-                                    "", // Provide a default value or handle null case
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12,
-                                  color: Colors.black,
+                            Column(
+                              children: [
+                                Center(
+                                  child: Text(
+                                    packagedlist[index]["ftitle"] ??
+                                        "", // Provide a default value or handle null case
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12,
+                                      color: Colors.black,
+                                    ),
+                                  ),
                                 ),
-                              ),
+                                Center(
+                                  child: Text(
+                                    packagedlist[index]["fsub"] ??
+                                        "", // Provide a default value or handle null case
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 24,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                          if (veglist[index]["subtitle"] != null &&
-                              veglist[index]["subtitle"] is String)
-                            Text(veglist[index]["subtitle"] ?? "",
+                          if (packagedlist[index]["subtitle"] != null &&
+                              packagedlist[index]["subtitle"] is String)
+                            Text(packagedlist[index]["subtitle"] ?? "",
                                 style: const TextStyle(
                                     fontSize: 16, color: toOnBoardText2))
                           else
-                          // Container(
-                          //   height: 30.h,
-                          //   width: 142.w,
-                          //   decoration: BoxDecoration(
-                          //     color: Colors.white,
-                          //     boxShadow: [BoxShadow(color: Color(0xff10CE7B))],
-                          //   ),
-                          //   child: Center(
-                          //     child: Text(
-                          //       veglist[index]["subtitleoffer"] ?? "", // Provide a default value or handle null case
-                          //       style: TextStyle(
-                          //         fontWeight: FontWeight.bold,
-                          //         fontSize: 24,
-                          //         color: Colors.black,
-                          //       ),
-                          //     ),
-                          //   ),
-                          // ),
                             Column(
                               children: [
                                 Container(
@@ -253,7 +252,7 @@ class _PackagedFoodScreenState extends State<PackagedFoodScreen> {
                                   ),
                                   child: Center(
                                     child: Text(
-                                      veglist[index]["offer"] ??
+                                      packagedlist[index]["offer"] ??
                                           "", // Provide a default value or handle null case
                                       style: TextStyle(
                                         fontWeight: FontWeight.bold,
@@ -263,6 +262,23 @@ class _PackagedFoodScreenState extends State<PackagedFoodScreen> {
                                     ),
                                   ),
                                 ),
+                                if (packagedlist[index]["fcontent"] != null &&
+                                    packagedlist[index]["fcontent"] is String)
+                                  Padding(
+                                    padding: const EdgeInsets.all(5),
+                                    child: Center(
+                                        child: Text(
+                                      packagedlist[index]["fcontent"] ?? "",
+                                      style:
+                                          TextStyle(color: Color(0xff707070)),
+                                    )),
+                                  )
+                                else
+                                  Center(
+                                      child: Text(
+                                    packagedlist[index]["fcontent"] ?? "",
+                                    style: TextStyle(color: Color(0xff707070)),
+                                  ))
                               ],
                             ),
                         ],
@@ -273,18 +289,18 @@ class _PackagedFoodScreenState extends State<PackagedFoodScreen> {
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       child: Row(
                         children: [
-                          if (veglist[index]["imageRs"] != null &&
-                              veglist[index]["imageRs"] is String)
+                          if (packagedlist[index]["imageRs"] != null &&
+                              packagedlist[index]["imageRs"] is String)
                             Image(
-                              image:
-                              AssetImage(veglist[index]["imageRs"] ?? ""),
+                              image: AssetImage(
+                                  packagedlist[index]["imageRs"] ?? ""),
                             )
                           else
                             Text(""),
-                          if (veglist[index]["price"] != null &&
-                              veglist[index]["price"] is int)
+                          if (packagedlist[index]["price"] != null &&
+                              packagedlist[index]["price"] is int)
                             Text(
-                              veglist[index]["price"].toString() ??
+                              packagedlist[index]["price"].toString() ??
                                   "", // Use the ?. operator to handle null
                               style: const TextStyle(color: Colors.black),
                             )
@@ -292,13 +308,13 @@ class _PackagedFoodScreenState extends State<PackagedFoodScreen> {
                             Text(""),
                           70.horizontalSpace,
                           Text(
-                            veglist[index]["peiece"] ?? "",
+                            packagedlist[index]["peiece"] ?? "",
                             style: const TextStyle(color: Colors.black),
                           ),
                         ],
                       ),
                     ),
-                    20.verticalSpace,
+                    10.verticalSpace,
                   ],
                 ),
               ),
@@ -310,8 +326,8 @@ class _PackagedFoodScreenState extends State<PackagedFoodScreen> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => MainProductPage(
-                                index: index,
-                              )));
+                                    index: index,
+                                  )));
                     },
                     child: Container(
                       width: 44.w,

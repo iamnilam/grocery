@@ -31,7 +31,6 @@ class _PersonalCareScreenState extends State<PersonalCareScreen> {
       "offer": "GROCERY40",
       "fcontent": "Lorem Ipsum is \nsimply"
     },
-
     {
       "color": categoriesFourColor,
       "image": personalCare2,
@@ -188,29 +187,31 @@ class _PersonalCareScreenState extends State<PersonalCareScreen> {
                 ),
                 child: Column(
                   children: [
-                      Padding(
-                        padding: EdgeInsets.only(top: 20),
-                        child: Column(
-                          children: [
-                        if (personalCarelist[index]["image"] != null &&
-                            personalCarelist[index]["image"] is String)
+                    Padding(
+                      padding: EdgeInsets.only(top: 20),
+                      child: Column(
+                        children: [
+                          if (personalCarelist[index]["image"] != null &&
+                              personalCarelist[index]["image"] is String)
                             Image(
                               height: 148.h,
                               width: 187.w,
-                              image: AssetImage(personalCarelist[index]["image"] ?? ""),
+                              image: AssetImage(
+                                  personalCarelist[index]["image"] ?? ""),
                             )
-                            else if(personalCarelist[index]["fimage"] != null &&
-                            personalCarelist[index]["fimage"] is String)
-                          Image(
-                            height: 50.h,
-                            width: 150.w,
-                            image: AssetImage(personalCarelist[index]["fimage"] ?? ""),
-                          )else Text("")
-
-                          ],
-                        ),
+                          else if (personalCarelist[index]["fimage"] != null &&
+                              personalCarelist[index]["fimage"] is String)
+                            Image(
+                              height: 50.h,
+                              width: 150.w,
+                              image: AssetImage(
+                                  personalCarelist[index]["fimage"] ?? ""),
+                            )
+                          else
+                            Text("")
+                        ],
                       ),
-
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Column(
@@ -279,14 +280,25 @@ class _PersonalCareScreenState extends State<PersonalCareScreen> {
                                     ),
                                   ),
                                 ),
-                                if (personalCarelist[index]["fcontent"] != null &&
-                                    personalCarelist[index]["fcontent"] is String)
-                                Padding(
-                                  padding: const EdgeInsets.all(5),
-                                  child: Center(child: Text(personalCarelist[index]["fcontent"] ?? "",style: TextStyle(color: Color(0xff707070)),)),
-                                )
+                                if (personalCarelist[index]["fcontent"] !=
+                                        null &&
+                                    personalCarelist[index]["fcontent"]
+                                        is String)
+                                  Padding(
+                                    padding: const EdgeInsets.all(5),
+                                    child: Center(
+                                        child: Text(
+                                      personalCarelist[index]["fcontent"] ?? "",
+                                      style:
+                                          TextStyle(color: Color(0xff707070)),
+                                    )),
+                                  )
                                 else
-                                  Center(child: Text(personalCarelist[index]["fcontent"] ?? "",style: TextStyle(color: Color(0xff707070)),))
+                                  Center(
+                                      child: Text(
+                                    personalCarelist[index]["fcontent"] ?? "",
+                                    style: TextStyle(color: Color(0xff707070)),
+                                  ))
                               ],
                             ),
                         ],
@@ -300,8 +312,8 @@ class _PersonalCareScreenState extends State<PersonalCareScreen> {
                           if (personalCarelist[index]["imageRs"] != null &&
                               personalCarelist[index]["imageRs"] is String)
                             Image(
-                              image:
-                              AssetImage(personalCarelist[index]["imageRs"] ?? ""),
+                              image: AssetImage(
+                                  personalCarelist[index]["imageRs"] ?? ""),
                             )
                           else
                             Text(""),
@@ -334,8 +346,8 @@ class _PersonalCareScreenState extends State<PersonalCareScreen> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => MainProductPage(
-                                index: index,
-                              )));
+                                    index: index,
+                                  )));
                     },
                     child: Container(
                       width: 44.w,

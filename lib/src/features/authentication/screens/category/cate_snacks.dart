@@ -26,9 +26,10 @@ class _SnacksScreenState extends State<SnacksScreen> {
     },
     {
       "color": categoriesSecondColor,
-      "title": "loreim ipsum ",
-      "subtitle": "40% OFF",
-      "offer": "GROCERY40"
+      "ftitle": "loreim ipsum ",
+      "fsub": "40% OFF",
+      "offer": "GROCERY40",
+      "fcontent": "Lorem Ipsum is \nsimply"
     },
     {
       "color": categoriesFourColor,
@@ -156,13 +157,7 @@ class _SnacksScreenState extends State<SnacksScreen> {
       "price": 99,
       "peiece": "3PC"
     },
-    {
-      "color": categoriesSecondColor,
-      "image": snacks16,
-      "titleofffer": "loreim ipsum ",
-      "subtitleoffer": "40% OFF",
-      "offer": "GROCERY40"
-    },
+    {"color": categoriesSecondColor, "fimage": snacks16, "offer": "GROCERY40"},
   ];
 
   bool defaultText = true;
@@ -188,29 +183,31 @@ class _SnacksScreenState extends State<SnacksScreen> {
                 ),
                 child: Column(
                   children: [
-                    if (snackslist[index]["image"] != null &&
-                        snackslist[index]["image"] is String)
-                      Padding(
-                        padding: EdgeInsets.only(top: 20),
-                        child: Image(
-                          height: 148.h,
-                          width: 187.w,
-                          image: AssetImage(snackslist[index]["image"] ?? ""),
-                        ),
-                      )
-                    else
-                      Padding(
-                        padding: EdgeInsets.only(top: 20),
-                        child: Text(
-                          snackslist[index]["titleofffer"] ??
-                              "", // Provide a default value or handle null case
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 20),
+                      child: Column(
+                        children: [
+                          if (snackslist[index]["image"] != null &&
+                              snackslist[index]["image"] is String)
+                            Image(
+                              height: 148.h,
+                              width: 187.w,
+                              image:
+                                  AssetImage(snackslist[index]["image"] ?? ""),
+                            )
+                          else if (snackslist[index]["fimage"] != null &&
+                              snackslist[index]["fimage"] is String)
+                            Image(
+                              height: 50.h,
+                              width: 150.w,
+                              image:
+                                  AssetImage(snackslist[index]["fimage"] ?? ""),
+                            )
+                          else
+                            Text("")
+                        ],
                       ),
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Column(
@@ -224,16 +221,31 @@ class _SnacksScreenState extends State<SnacksScreen> {
                                     fontWeight: FontWeight.bold,
                                     fontSize: 24))
                           else
-                            Center(
-                              child: Text(
-                                snackslist[index]["titleofffer"] ??
-                                    "", // Provide a default value or handle null case
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12,
-                                  color: Colors.black,
+                            Column(
+                              children: [
+                                Center(
+                                  child: Text(
+                                    snackslist[index]["ftitle"] ??
+                                        "", // Provide a default value or handle null case
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12,
+                                      color: Colors.black,
+                                    ),
+                                  ),
                                 ),
-                              ),
+                                Center(
+                                  child: Text(
+                                    snackslist[index]["fsub"] ??
+                                        "", // Provide a default value or handle null case
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 24,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           if (snackslist[index]["subtitle"] != null &&
                               snackslist[index]["subtitle"] is String)
@@ -241,24 +253,6 @@ class _SnacksScreenState extends State<SnacksScreen> {
                                 style: const TextStyle(
                                     fontSize: 16, color: toOnBoardText2))
                           else
-                          // Container(
-                          //   height: 30.h,
-                          //   width: 142.w,
-                          //   decoration: BoxDecoration(
-                          //     color: Colors.white,
-                          //     boxShadow: [BoxShadow(color: Color(0xff10CE7B))],
-                          //   ),
-                          //   child: Center(
-                          //     child: Text(
-                          //       veglist[index]["subtitleoffer"] ?? "", // Provide a default value or handle null case
-                          //       style: TextStyle(
-                          //         fontWeight: FontWeight.bold,
-                          //         fontSize: 24,
-                          //         color: Colors.black,
-                          //       ),
-                          //     ),
-                          //   ),
-                          // ),
                             Column(
                               children: [
                                 Container(
@@ -282,6 +276,23 @@ class _SnacksScreenState extends State<SnacksScreen> {
                                     ),
                                   ),
                                 ),
+                                if (snackslist[index]["fcontent"] != null &&
+                                    snackslist[index]["fcontent"] is String)
+                                  Padding(
+                                    padding: const EdgeInsets.all(5),
+                                    child: Center(
+                                        child: Text(
+                                      snackslist[index]["fcontent"] ?? "",
+                                      style:
+                                          TextStyle(color: Color(0xff707070)),
+                                    )),
+                                  )
+                                else
+                                  Center(
+                                      child: Text(
+                                    snackslist[index]["fcontent"] ?? "",
+                                    style: TextStyle(color: Color(0xff707070)),
+                                  ))
                               ],
                             ),
                         ],
@@ -295,8 +306,8 @@ class _SnacksScreenState extends State<SnacksScreen> {
                           if (snackslist[index]["imageRs"] != null &&
                               snackslist[index]["imageRs"] is String)
                             Image(
-                              image:
-                              AssetImage(snackslist[index]["imageRs"] ?? ""),
+                              image: AssetImage(
+                                  snackslist[index]["imageRs"] ?? ""),
                             )
                           else
                             Text(""),
@@ -317,7 +328,7 @@ class _SnacksScreenState extends State<SnacksScreen> {
                         ],
                       ),
                     ),
-                    20.verticalSpace,
+                    10.verticalSpace,
                   ],
                 ),
               ),
@@ -329,8 +340,8 @@ class _SnacksScreenState extends State<SnacksScreen> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => MainProductPage(
-                                index: index,
-                              )));
+                                    index: index,
+                                  )));
                     },
                     child: Container(
                       width: 44.w,

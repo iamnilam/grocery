@@ -25,9 +25,10 @@ class _FlourScreenState extends State<FlourScreen> {
     },
     {
       "color": categoriesSecondColor,
-      "title": "loreim ipsum ",
-      "subtitle": "40% OFF",
-      "offer": "GROCERY40"
+      "ftitle": "loreim ipsum ",
+      "fsub": "40% OFF",
+      "offer": "GROCERY40",
+      "fcontent": "Lorem Ipsum is \nsimply"
     },
     {
       "color": categoriesFourColor,
@@ -155,7 +156,7 @@ class _FlourScreenState extends State<FlourScreen> {
       "price": 99,
       "peiece": "3PC"
     },
-    {"color": categoriesSecondColor, "image": flour16, "offer": "GROCERY40"},
+    {"color": categoriesSecondColor, "fimage": flour16, "offer": "GROCERY40"},
   ];
 
   bool defaultText = true;
@@ -181,29 +182,31 @@ class _FlourScreenState extends State<FlourScreen> {
                 ),
                 child: Column(
                   children: [
-                    if (flourList[index]["image"] != null &&
-                        flourList[index]["image"] is String)
-                      Padding(
-                        padding: EdgeInsets.only(top: 20),
-                        child: Image(
-                          height: 148.h,
-                          width: 187.w,
-                          image: AssetImage(flourList[index]["image"] ?? ""),
-                        ),
-                      )
-                    else
-                      Padding(
-                        padding: EdgeInsets.only(top: 20),
-                        child: Text(
-                          flourList[index]["titleofffer"] ??
-                              "", // Provide a default value or handle null case
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 20),
+                      child: Column(
+                        children: [
+                          if (flourList[index]["image"] != null &&
+                              flourList[index]["image"] is String)
+                            Image(
+                              height: 148.h,
+                              width: 187.w,
+                              image:
+                                  AssetImage(flourList[index]["image"] ?? ""),
+                            )
+                          else if (flourList[index]["fimage"] != null &&
+                              flourList[index]["fimage"] is String)
+                            Image(
+                              height: 50.h,
+                              width: 150.w,
+                              image:
+                                  AssetImage(flourList[index]["fimage"] ?? ""),
+                            )
+                          else
+                            Text("")
+                        ],
                       ),
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Column(
@@ -217,16 +220,31 @@ class _FlourScreenState extends State<FlourScreen> {
                                     fontWeight: FontWeight.bold,
                                     fontSize: 24))
                           else
-                            Center(
-                              child: Text(
-                                flourList[index]["titleofffer"] ??
-                                    "", // Provide a default value or handle null case
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12,
-                                  color: Colors.black,
+                            Column(
+                              children: [
+                                Center(
+                                  child: Text(
+                                    flourList[index]["ftitle"] ??
+                                        "", // Provide a default value or handle null case
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12,
+                                      color: Colors.black,
+                                    ),
+                                  ),
                                 ),
-                              ),
+                                Center(
+                                  child: Text(
+                                    flourList[index]["fsub"] ??
+                                        "", // Provide a default value or handle null case
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 24,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           if (flourList[index]["subtitle"] != null &&
                               flourList[index]["subtitle"] is String)
@@ -234,24 +252,6 @@ class _FlourScreenState extends State<FlourScreen> {
                                 style: const TextStyle(
                                     fontSize: 16, color: toOnBoardText2))
                           else
-                          // Container(
-                          //   height: 30.h,
-                          //   width: 142.w,
-                          //   decoration: BoxDecoration(
-                          //     color: Colors.white,
-                          //     boxShadow: [BoxShadow(color: Color(0xff10CE7B))],
-                          //   ),
-                          //   child: Center(
-                          //     child: Text(
-                          //       veglist[index]["subtitleoffer"] ?? "", // Provide a default value or handle null case
-                          //       style: TextStyle(
-                          //         fontWeight: FontWeight.bold,
-                          //         fontSize: 24,
-                          //         color: Colors.black,
-                          //       ),
-                          //     ),
-                          //   ),
-                          // ),
                             Column(
                               children: [
                                 Container(
@@ -275,6 +275,23 @@ class _FlourScreenState extends State<FlourScreen> {
                                     ),
                                   ),
                                 ),
+                                if (flourList[index]["fcontent"] != null &&
+                                    flourList[index]["fcontent"] is String)
+                                  Padding(
+                                    padding: const EdgeInsets.all(5),
+                                    child: Center(
+                                        child: Text(
+                                      flourList[index]["fcontent"] ?? "",
+                                      style:
+                                          TextStyle(color: Color(0xff707070)),
+                                    )),
+                                  )
+                                else
+                                  Center(
+                                      child: Text(
+                                    flourList[index]["fcontent"] ?? "",
+                                    style: TextStyle(color: Color(0xff707070)),
+                                  ))
                               ],
                             ),
                         ],
@@ -289,7 +306,7 @@ class _FlourScreenState extends State<FlourScreen> {
                               flourList[index]["imageRs"] is String)
                             Image(
                               image:
-                              AssetImage(flourList[index]["imageRs"] ?? ""),
+                                  AssetImage(flourList[index]["imageRs"] ?? ""),
                             )
                           else
                             Text(""),
@@ -310,7 +327,7 @@ class _FlourScreenState extends State<FlourScreen> {
                         ],
                       ),
                     ),
-                    20.verticalSpace,
+                    10.verticalSpace,
                   ],
                 ),
               ),
@@ -322,8 +339,8 @@ class _FlourScreenState extends State<FlourScreen> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => MainProductPage(
-                                index: index,
-                              )));
+                                    index: index,
+                                  )));
                     },
                     child: Container(
                       width: 44.w,

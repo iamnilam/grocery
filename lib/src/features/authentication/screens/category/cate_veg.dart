@@ -14,7 +14,7 @@ class VegitablesScreen extends StatefulWidget {
 }
 
 class _VegitablesScreenState extends State<VegitablesScreen> {
-  List<Map<String, dynamic>> veglist = [
+  List<Map<String, dynamic>> vegetableslist = [
     {
       "color": categoriesFirstColor,
       "image": vegetables1,
@@ -26,9 +26,10 @@ class _VegitablesScreenState extends State<VegitablesScreen> {
     },
     {
       "color": categoriesSecondColor,
-      "title": "loreim ipsum ",
-      "subtitle": "40% OFF",
-      "offer": "GROCERY40"
+      "ftitle": "loreim ipsum ",
+      "fsub": "40% OFF",
+      "offer": "GROCERY40",
+      "fcontent": "Lorem Ipsum is \nsimply"
     },
     {
       "color": categoriesFourColor,
@@ -166,13 +167,9 @@ class _VegitablesScreenState extends State<VegitablesScreen> {
       "peiece": "3PC"
     },
     {
-      "color": categoriesnineColor,
-      "image": vegetables17,
-      // "imageRs": rupees,
-      "title": "Dairy ",
-      "subtitle": "Lorem Ipsum is simply",
-      // "price": 99,
-      // "peiece": "3PC"
+      "color": categoriesSecondColor,
+      "fimage": vegetables16,
+      "offer": "GROCERY40"
     },
   ];
 
@@ -189,87 +186,86 @@ class _VegitablesScreenState extends State<VegitablesScreen> {
           staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
-          itemCount: veglist.length,
+          itemCount: vegetableslist.length,
           itemBuilder: (context, index) {
             return Stack(children: [
               Container(
                 decoration: BoxDecoration(
-                  color: veglist[index]["color"],
+                  color: vegetableslist[index]["color"],
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Column(
                   children: [
-                    if (veglist[index]["image"] != null &&
-                        veglist[index]["image"] is String)
-                      Padding(
-                        padding: EdgeInsets.only(top: 20),
-                        child: Image(
-                          height: 148.h,
-                          width: 187.w,
-                          image: AssetImage(veglist[index]["image"] ?? ""),
-                        ),
-                      )
-                    else
-                      Padding(
-                        padding: EdgeInsets.only(top: 20),
-                        child: Text(
-                          veglist[index]["titleofffer"] ??
-                              "", // Provide a default value or handle null case
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 20),
+                      child: Column(
+                        children: [
+                          if (vegetableslist[index]["image"] != null &&
+                              vegetableslist[index]["image"] is String)
+                            Image(
+                              height: 148.h,
+                              width: 187.w,
+                              image: AssetImage(
+                                  vegetableslist[index]["image"] ?? ""),
+                            )
+                          else if (vegetableslist[index]["fimage"] != null &&
+                              vegetableslist[index]["fimage"] is String)
+                            Image(
+                              height: 50.h,
+                              width: 150.w,
+                              image: AssetImage(
+                                  vegetableslist[index]["fimage"] ?? ""),
+                            )
+                          else
+                            Text("")
+                        ],
                       ),
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          if (veglist[index]["title"] != null &&
-                              veglist[index]["title"] is String)
-                            Text(veglist[index]["title"] ?? "",
+                          if (vegetableslist[index]["title"] != null &&
+                              vegetableslist[index]["title"] is String)
+                            Text(vegetableslist[index]["title"] ?? "",
                                 style: const TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 24))
                           else
-                            Center(
-                              child: Text(
-                                veglist[index]["titleofffer"] ??
-                                    "", // Provide a default value or handle null case
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12,
-                                  color: Colors.black,
+                            Column(
+                              children: [
+                                Center(
+                                  child: Text(
+                                    vegetableslist[index]["ftitle"] ??
+                                        "", // Provide a default value or handle null case
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12,
+                                      color: Colors.black,
+                                    ),
+                                  ),
                                 ),
-                              ),
+                                Center(
+                                  child: Text(
+                                    vegetableslist[index]["fsub"] ??
+                                        "", // Provide a default value or handle null case
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 24,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                          if (veglist[index]["subtitle"] != null &&
-                              veglist[index]["subtitle"] is String)
-                            Text(veglist[index]["subtitle"] ?? "",
+                          if (vegetableslist[index]["subtitle"] != null &&
+                              vegetableslist[index]["subtitle"] is String)
+                            Text(vegetableslist[index]["subtitle"] ?? "",
                                 style: const TextStyle(
                                     fontSize: 16, color: toOnBoardText2))
                           else
-                            // Container(
-                            //   height: 30.h,
-                            //   width: 142.w,
-                            //   decoration: BoxDecoration(
-                            //     color: Colors.white,
-                            //     boxShadow: [BoxShadow(color: Color(0xff10CE7B))],
-                            //   ),
-                            //   child: Center(
-                            //     child: Text(
-                            //       veglist[index]["subtitleoffer"] ?? "", // Provide a default value or handle null case
-                            //       style: TextStyle(
-                            //         fontWeight: FontWeight.bold,
-                            //         fontSize: 24,
-                            //         color: Colors.black,
-                            //       ),
-                            //     ),
-                            //   ),
-                            // ),
                             Column(
                               children: [
                                 Container(
@@ -283,7 +279,7 @@ class _VegitablesScreenState extends State<VegitablesScreen> {
                                   ),
                                   child: Center(
                                     child: Text(
-                                      veglist[index]["offer"] ??
+                                      vegetableslist[index]["offer"] ??
                                           "", // Provide a default value or handle null case
                                       style: TextStyle(
                                         fontWeight: FontWeight.bold,
@@ -293,6 +289,23 @@ class _VegitablesScreenState extends State<VegitablesScreen> {
                                     ),
                                   ),
                                 ),
+                                if (vegetableslist[index]["fcontent"] != null &&
+                                    vegetableslist[index]["fcontent"] is String)
+                                  Padding(
+                                    padding: const EdgeInsets.all(5),
+                                    child: Center(
+                                        child: Text(
+                                      vegetableslist[index]["fcontent"] ?? "",
+                                      style:
+                                          TextStyle(color: Color(0xff707070)),
+                                    )),
+                                  )
+                                else
+                                  Center(
+                                      child: Text(
+                                    vegetableslist[index]["fcontent"] ?? "",
+                                    style: TextStyle(color: Color(0xff707070)),
+                                  ))
                               ],
                             ),
                         ],
@@ -303,18 +316,18 @@ class _VegitablesScreenState extends State<VegitablesScreen> {
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       child: Row(
                         children: [
-                          if (veglist[index]["imageRs"] != null &&
-                              veglist[index]["imageRs"] is String)
+                          if (vegetableslist[index]["imageRs"] != null &&
+                              vegetableslist[index]["imageRs"] is String)
                             Image(
-                              image:
-                                  AssetImage(veglist[index]["imageRs"] ?? ""),
+                              image: AssetImage(
+                                  vegetableslist[index]["imageRs"] ?? ""),
                             )
                           else
                             Text(""),
-                          if (veglist[index]["price"] != null &&
-                              veglist[index]["price"] is int)
+                          if (vegetableslist[index]["price"] != null &&
+                              vegetableslist[index]["price"] is int)
                             Text(
-                              veglist[index]["price"].toString() ??
+                              vegetableslist[index]["price"].toString() ??
                                   "", // Use the ?. operator to handle null
                               style: const TextStyle(color: Colors.black),
                             )
@@ -322,13 +335,13 @@ class _VegitablesScreenState extends State<VegitablesScreen> {
                             Text(""),
                           70.horizontalSpace,
                           Text(
-                            veglist[index]["peiece"] ?? "",
+                            vegetableslist[index]["peiece"] ?? "",
                             style: const TextStyle(color: Colors.black),
                           ),
                         ],
                       ),
                     ),
-                    20.verticalSpace,
+                    10.verticalSpace,
                   ],
                 ),
               ),

@@ -31,18 +31,17 @@ class MainProductPage extends StatelessWidget {
     }
 
     return Scaffold(
-        appBar: AppBar(
+      appBar: AppBar(
           elevation: 0,
-        backgroundColor: Colors.white,
-        leading: Padding(
-        padding: const EdgeInsets.only(bottom: 30),
-    child: InkWell(
-    onTap: () {
-    Navigator.pop(context);
-    },
-    child: Icon(color: Color(0xFF858585), Icons.arrow_back_sharp),
-    ))),
-
+          backgroundColor: Colors.white,
+          leading: Padding(
+              padding: const EdgeInsets.only(bottom: 30),
+              child: InkWell(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Icon(color: Color(0xFF858585), Icons.arrow_back_sharp),
+              ))),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(

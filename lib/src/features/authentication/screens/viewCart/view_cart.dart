@@ -10,16 +10,24 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          shadowColor: Colors.black.withOpacity(0.5),
+            surfaceTintColor: Colors.black,
             foregroundColor: Colors.red,
-            elevation: 6,
+            elevation: 8,
             backgroundColor: Colors.white,
+            centerTitle: true,
             title: const Text(
-              "Checkout",
+              "Cart",
               style: TextStyle(color: Colors.black),
             ),
-            leading: const Icon(
-              Icons.arrow_back_sharp,
-              color: Colors.black,
+            leading: InkWell(
+              onTap: (){
+                Navigator.pop(context);
+              },
+              child: const Icon(
+                Icons.arrow_back_sharp,
+                color: Colors.black,
+              ),
             )),
         body: SingleChildScrollView(
           child: Column(
@@ -45,10 +53,10 @@ class CartScreen extends StatelessWidget {
                         child: Row(
                           children: [
                             Image(
-                              height: 50.3.h,
-                              width: 50.3.w,
+                              height: 40.3.h,
+                              width: 40.3.w,
                               image: const AssetImage(
-                                "assets/images/categories/fruits/minutes1.png",
+                                "assets/images/minutes.png",
                               ),
                               fit: BoxFit.cover,
                             ),
@@ -58,13 +66,13 @@ class CartScreen extends StatelessWidget {
                                 Text(
                                   "Delivery in 15 minutes",
                                   style: TextStyle(
-                                      color: Color(0xFF707070),
+                                      color: const Color(0xFF707070),
                                       fontSize: 14.sp),
                                 ),
                                 Text(
                                   "Shipment of 1 items",
                                   style: TextStyle(
-                                    color: Color(0xFF707070),
+                                    color: const Color(0xFF707070),
                                     fontSize: 14.sp,
                                   ),
                                 )
@@ -79,7 +87,7 @@ class CartScreen extends StatelessWidget {
                           Image(
                               height: 68.h,
                               width: 71.w,
-                              image: AssetImage("assets/images/chikoo.png")),
+                              image: const AssetImage("assets/images/chikoo.png")),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -87,21 +95,23 @@ class CartScreen extends StatelessWidget {
                               Text(
                                 "Potato - 1 KG",
                                 style: TextStyle(
-                                    color: Color(0xFF707070), fontSize: 14.sp),
+                                    color: const Color(0xFF707070), fontSize: 14.sp),
                               ),
+                              2.verticalSpace,
                               Text(
                                 "1 KG",
                                 style: TextStyle(
-                                    color: Color(0xFF707070), fontSize: 14.sp),
+                                    color: const Color(0xFF707070), fontSize: 10.sp),
                               ),
-                              Row(
+                              10.verticalSpace,
+                              const Row(
                                 children: [
                                   Image(
                                       image: AssetImage(
                                           "assets/images/rupees.png")),
                                   Text(
                                     "30",
-                                    style: TextStyle(color: Colors.black),
+                                    style: TextStyle(color: Colors.black,fontSize: 11),
                                   ),
                                 ],
                               ),
@@ -112,20 +122,23 @@ class CartScreen extends StatelessWidget {
                             width: 95.w,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10.r),
-                              color: Color(0xff0AB404),
+                              color: const Color(0xff0AB404),
                             ),
                             child: Center(
                               child: InputQty(
                                 initVal: 1,
                                 steps: 1,
-                                minVal: -100,
-                                decoration: QtyDecorationProps(
+                                minVal: -99,
+                                decoration: const QtyDecorationProps(
                                   btnColor: Colors.white,
+                                  border: OutlineInputBorder(
+                                    borderSide: BorderSide.none
+                                  )
                                 ),
                                 validator: (value) {
                                   if (value == null) {
                                     return "Required field";
-                                  } else if (value >= 100) {
+                                  } else if (value >= 99) {
                                     return "More than available quantity";
                                   }
                                   return null;
@@ -158,10 +171,10 @@ class CartScreen extends StatelessWidget {
               Container(
                 height: 77.h,
                 decoration: BoxDecoration(
-                  color: Color(0xffF7F7F7),
+                  color: const Color(0xffF7F7F7),
                   borderRadius: BorderRadius.circular(10.r),
                 ),
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Image(
@@ -178,7 +191,7 @@ class CartScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
@@ -192,12 +205,12 @@ class CartScreen extends StatelessWidget {
                         ],
                       ),
                       20.verticalSpace,
-                      Text(
+                      const Text(
                         "Bill Details",
                         style: TextStyle(color: Colors.black, fontSize: 21),
                       ),
                       20.verticalSpace,
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -218,7 +231,7 @@ class CartScreen extends StatelessWidget {
                         ],
                       ),
                       20.verticalSpace,
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -239,7 +252,7 @@ class CartScreen extends StatelessWidget {
                         ],
                       ),
                       20.verticalSpace,
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
@@ -266,7 +279,7 @@ class CartScreen extends StatelessWidget {
                       ),
                       10.verticalSpace,
                       RichText(
-                          text: TextSpan(children: [
+                          text: const TextSpan(children: [
                         TextSpan(
                             text:
                                 "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisienim ad minim veniam, quis ",
@@ -288,7 +301,7 @@ class CartScreen extends StatelessWidget {
                 width: 430.w,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10.r),
-                  color: Color(0xff0AB404),
+                  color: const Color(0xff0AB404),
                 ),
                 child: Center(
                   child: Text(

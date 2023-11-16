@@ -188,29 +188,31 @@ class _DairyScreenState extends State<DairyScreen> {
                 ),
                 child: Column(
                   children: [
-                    if (dairylist[index]["image"] != null &&
-                        dairylist[index]["image"] is String)
-                      Padding(
-                        padding: EdgeInsets.only(top: 20),
-                        child: Image(
-                          height: 148.h,
-                          width: 187.w,
-                          image: AssetImage(dairylist[index]["image"] ?? ""),
-                        ),
-                      )
-                    else
-                      Padding(
-                        padding: EdgeInsets.only(top: 20),
-                        child: Text(
-                          dairylist[index]["titleofffer"] ??
-                              "", // Provide a default value or handle null case
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 20),
+                      child: Column(
+                        children: [
+                          if (dairylist[index]["image"] != null &&
+                              dairylist[index]["image"] is String)
+                            Image(
+                              height: 148.h,
+                              width: 187.w,
+                              image:
+                                  AssetImage(dairylist[index]["image"] ?? ""),
+                            )
+                          else if (dairylist[index]["fimage"] != null &&
+                              dairylist[index]["fimage"] is String)
+                            Image(
+                              height: 50.h,
+                              width: 150.w,
+                              image:
+                                  AssetImage(dairylist[index]["fimage"] ?? ""),
+                            )
+                          else
+                            Text("")
+                        ],
                       ),
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Column(
@@ -224,16 +226,31 @@ class _DairyScreenState extends State<DairyScreen> {
                                     fontWeight: FontWeight.bold,
                                     fontSize: 24))
                           else
-                            Center(
-                              child: Text(
-                                dairylist[index]["titleofffer"] ??
-                                    "", // Provide a default value or handle null case
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12,
-                                  color: Colors.black,
+                            Column(
+                              children: [
+                                Center(
+                                  child: Text(
+                                    dairylist[index]["ftitle"] ??
+                                        "", // Provide a default value or handle null case
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12,
+                                      color: Colors.black,
+                                    ),
+                                  ),
                                 ),
-                              ),
+                                Center(
+                                  child: Text(
+                                    dairylist[index]["fsub"] ??
+                                        "", // Provide a default value or handle null case
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 24,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           if (dairylist[index]["subtitle"] != null &&
                               dairylist[index]["subtitle"] is String)
@@ -241,24 +258,6 @@ class _DairyScreenState extends State<DairyScreen> {
                                 style: const TextStyle(
                                     fontSize: 16, color: toOnBoardText2))
                           else
-                          // Container(
-                          //   height: 30.h,
-                          //   width: 142.w,
-                          //   decoration: BoxDecoration(
-                          //     color: Colors.white,
-                          //     boxShadow: [BoxShadow(color: Color(0xff10CE7B))],
-                          //   ),
-                          //   child: Center(
-                          //     child: Text(
-                          //       veglist[index]["subtitleoffer"] ?? "", // Provide a default value or handle null case
-                          //       style: TextStyle(
-                          //         fontWeight: FontWeight.bold,
-                          //         fontSize: 24,
-                          //         color: Colors.black,
-                          //       ),
-                          //     ),
-                          //   ),
-                          // ),
                             Column(
                               children: [
                                 Container(
@@ -282,6 +281,23 @@ class _DairyScreenState extends State<DairyScreen> {
                                     ),
                                   ),
                                 ),
+                                if (dairylist[index]["fcontent"] != null &&
+                                    dairylist[index]["fcontent"] is String)
+                                  Padding(
+                                    padding: const EdgeInsets.all(5),
+                                    child: Center(
+                                        child: Text(
+                                      dairylist[index]["fcontent"] ?? "",
+                                      style:
+                                          TextStyle(color: Color(0xff707070)),
+                                    )),
+                                  )
+                                else
+                                  Center(
+                                      child: Text(
+                                    dairylist[index]["fcontent"] ?? "",
+                                    style: TextStyle(color: Color(0xff707070)),
+                                  ))
                               ],
                             ),
                         ],
@@ -296,7 +312,7 @@ class _DairyScreenState extends State<DairyScreen> {
                               dairylist[index]["imageRs"] is String)
                             Image(
                               image:
-                              AssetImage(dairylist[index]["imageRs"] ?? ""),
+                                  AssetImage(dairylist[index]["imageRs"] ?? ""),
                             )
                           else
                             Text(""),
@@ -317,7 +333,7 @@ class _DairyScreenState extends State<DairyScreen> {
                         ],
                       ),
                     ),
-                    20.verticalSpace,
+                    10.verticalSpace,
                   ],
                 ),
               ),
@@ -329,8 +345,8 @@ class _DairyScreenState extends State<DairyScreen> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => MainProductPage(
-                                index: index,
-                              )));
+                                    index: index,
+                                  )));
                     },
                     child: Container(
                       width: 44.w,

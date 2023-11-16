@@ -26,9 +26,10 @@ class _BabyCareScreenState extends State<BabyCareScreen> {
     },
     {
       "color": categoriesSecondColor,
-      "title": "loreim ipsum ",
-      "subtitle": "40% OFF",
-      "offer": "GROCERY40"
+      "ftitle": "loreim ipsum ",
+      "fsub": "40% OFF",
+      "offer": "GROCERY40",
+      "fcontent": "Lorem Ipsum is \nsimply"
     },
     {
       "color": categoriesFourColor,
@@ -156,7 +157,7 @@ class _BabyCareScreenState extends State<BabyCareScreen> {
       "price": 99,
       "peiece": "3PC"
     },
-    {"color": categoriesFiveColor, "image": babycare16, "offer": "GROCERY40"},
+    {"color": categoriesFiveColor, "fimage": babycare16, "offer": "GROCERY40"},
   ];
 
   bool defaultText = true;
@@ -182,29 +183,31 @@ class _BabyCareScreenState extends State<BabyCareScreen> {
                 ),
                 child: Column(
                   children: [
-                    if (babyCarelist[index]["image"] != null &&
-                        babyCarelist[index]["image"] is String)
-                      Padding(
-                        padding: EdgeInsets.only(top: 20),
-                        child: Image(
-                          height: 148.h,
-                          width: 187.w,
-                          image: AssetImage(babyCarelist[index]["image"] ?? ""),
-                        ),
-                      )
-                    else
-                      Padding(
-                        padding: EdgeInsets.only(top: 20),
-                        child: Text(
-                          babyCarelist[index]["titleofffer"] ??
-                              "", // Provide a default value or handle null case
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 20),
+                      child: Column(
+                        children: [
+                          if (babyCarelist[index]["image"] != null &&
+                              babyCarelist[index]["image"] is String)
+                            Image(
+                              height: 148.h,
+                              width: 187.w,
+                              image: AssetImage(
+                                  babyCarelist[index]["image"] ?? ""),
+                            )
+                          else if (babyCarelist[index]["fimage"] != null &&
+                              babyCarelist[index]["fimage"] is String)
+                            Image(
+                              height: 50.h,
+                              width: 150.w,
+                              image: AssetImage(
+                                  babyCarelist[index]["fimage"] ?? ""),
+                            )
+                          else
+                            Text("")
+                        ],
                       ),
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Column(
@@ -218,16 +221,31 @@ class _BabyCareScreenState extends State<BabyCareScreen> {
                                     fontWeight: FontWeight.bold,
                                     fontSize: 24))
                           else
-                            Center(
-                              child: Text(
-                                babyCarelist[index]["titleofffer"] ??
-                                    "", // Provide a default value or handle null case
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12,
-                                  color: Colors.black,
+                            Column(
+                              children: [
+                                Center(
+                                  child: Text(
+                                    babyCarelist[index]["ftitle"] ??
+                                        "", // Provide a default value or handle null case
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12,
+                                      color: Colors.black,
+                                    ),
+                                  ),
                                 ),
-                              ),
+                                Center(
+                                  child: Text(
+                                    babyCarelist[index]["fsub"] ??
+                                        "", // Provide a default value or handle null case
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 24,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           if (babyCarelist[index]["subtitle"] != null &&
                               babyCarelist[index]["subtitle"] is String)
@@ -235,24 +253,6 @@ class _BabyCareScreenState extends State<BabyCareScreen> {
                                 style: const TextStyle(
                                     fontSize: 16, color: toOnBoardText2))
                           else
-                          // Container(
-                          //   height: 30.h,
-                          //   width: 142.w,
-                          //   decoration: BoxDecoration(
-                          //     color: Colors.white,
-                          //     boxShadow: [BoxShadow(color: Color(0xff10CE7B))],
-                          //   ),
-                          //   child: Center(
-                          //     child: Text(
-                          //       veglist[index]["subtitleoffer"] ?? "", // Provide a default value or handle null case
-                          //       style: TextStyle(
-                          //         fontWeight: FontWeight.bold,
-                          //         fontSize: 24,
-                          //         color: Colors.black,
-                          //       ),
-                          //     ),
-                          //   ),
-                          // ),
                             Column(
                               children: [
                                 Container(
@@ -276,6 +276,23 @@ class _BabyCareScreenState extends State<BabyCareScreen> {
                                     ),
                                   ),
                                 ),
+                                if (babyCarelist[index]["fcontent"] != null &&
+                                    babyCarelist[index]["fcontent"] is String)
+                                  Padding(
+                                    padding: const EdgeInsets.all(5),
+                                    child: Center(
+                                        child: Text(
+                                      babyCarelist[index]["fcontent"] ?? "",
+                                      style:
+                                          TextStyle(color: Color(0xff707070)),
+                                    )),
+                                  )
+                                else
+                                  Center(
+                                      child: Text(
+                                    babyCarelist[index]["fcontent"] ?? "",
+                                    style: TextStyle(color: Color(0xff707070)),
+                                  ))
                               ],
                             ),
                         ],
@@ -289,8 +306,8 @@ class _BabyCareScreenState extends State<BabyCareScreen> {
                           if (babyCarelist[index]["imageRs"] != null &&
                               babyCarelist[index]["imageRs"] is String)
                             Image(
-                              image:
-                              AssetImage(babyCarelist[index]["imageRs"] ?? ""),
+                              image: AssetImage(
+                                  babyCarelist[index]["imageRs"] ?? ""),
                             )
                           else
                             Text(""),
@@ -311,7 +328,7 @@ class _BabyCareScreenState extends State<BabyCareScreen> {
                         ],
                       ),
                     ),
-                    20.verticalSpace,
+                    10.verticalSpace,
                   ],
                 ),
               ),
@@ -323,8 +340,8 @@ class _BabyCareScreenState extends State<BabyCareScreen> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => MainProductPage(
-                                index: index,
-                              )));
+                                    index: index,
+                                  )));
                     },
                     child: Container(
                       width: 44.w,

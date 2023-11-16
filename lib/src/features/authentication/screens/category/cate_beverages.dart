@@ -14,7 +14,7 @@ class BeveragesScreen extends StatefulWidget {
 }
 
 class _BeveragesScreenState extends State<BeveragesScreen> {
-  List<Map<String, dynamic>> veglist = [
+  List<Map<String, dynamic>> bevrageslist = [
     {
       "color": categoriesFirstColor,
       "image": beverages1,
@@ -26,9 +26,10 @@ class _BeveragesScreenState extends State<BeveragesScreen> {
     },
     {
       "color": categoriesSecondColor,
-      "title": "loreim ipsum ",
-      "subtitle": "40% OFF",
-      "offer": "GROCERY40"
+      "ftitle": "loreim ipsum ",
+      "fsub": "40% OFF",
+      "offer": "GROCERY40",
+      "fcontent": "Lorem Ipsum is \nsimply"
     },
     {
       "color": categoriesFourColor,
@@ -158,7 +159,7 @@ class _BeveragesScreenState extends State<BeveragesScreen> {
     },
     {
       "color": categoriesFiveColor,
-      "image": beverages16,
+      "fimage": beverages16,
       "title": "Snacks",
     },
   ];
@@ -176,87 +177,86 @@ class _BeveragesScreenState extends State<BeveragesScreen> {
           staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
-          itemCount: veglist.length,
+          itemCount: bevrageslist.length,
           itemBuilder: (context, index) {
             return Stack(children: [
               Container(
                 decoration: BoxDecoration(
-                  color: veglist[index]["color"],
+                  color: bevrageslist[index]["color"],
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Column(
                   children: [
-                    if (veglist[index]["image"] != null &&
-                        veglist[index]["image"] is String)
-                      Padding(
-                        padding: EdgeInsets.only(top: 20),
-                        child: Image(
-                          height: 148.h,
-                          width: 187.w,
-                          image: AssetImage(veglist[index]["image"] ?? ""),
-                        ),
-                      )
-                    else
-                      Padding(
-                        padding: EdgeInsets.only(top: 20),
-                        child: Text(
-                          veglist[index]["titleofffer"] ??
-                              "", // Provide a default value or handle null case
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 20),
+                      child: Column(
+                        children: [
+                          if (bevrageslist[index]["image"] != null &&
+                              bevrageslist[index]["image"] is String)
+                            Image(
+                              height: 148.h,
+                              width: 187.w,
+                              image: AssetImage(
+                                  bevrageslist[index]["image"] ?? ""),
+                            )
+                          else if (bevrageslist[index]["fimage"] != null &&
+                              bevrageslist[index]["fimage"] is String)
+                            Image(
+                              height: 50.h,
+                              width: 150.w,
+                              image: AssetImage(
+                                  bevrageslist[index]["fimage"] ?? ""),
+                            )
+                          else
+                            Text("")
+                        ],
                       ),
+                    ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          if (veglist[index]["title"] != null &&
-                              veglist[index]["title"] is String)
-                            Text(veglist[index]["title"] ?? "",
+                          if (bevrageslist[index]["title"] != null &&
+                              bevrageslist[index]["title"] is String)
+                            Text(bevrageslist[index]["title"] ?? "",
                                 style: const TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 24))
                           else
-                            Center(
-                              child: Text(
-                                veglist[index]["titleofffer"] ??
-                                    "", // Provide a default value or handle null case
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 12,
-                                  color: Colors.black,
+                            Column(
+                              children: [
+                                Center(
+                                  child: Text(
+                                    bevrageslist[index]["ftitle"] ??
+                                        "", // Provide a default value or handle null case
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12,
+                                      color: Colors.black,
+                                    ),
+                                  ),
                                 ),
-                              ),
+                                Center(
+                                  child: Text(
+                                    bevrageslist[index]["fsub"] ??
+                                        "", // Provide a default value or handle null case
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 24,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                          if (veglist[index]["subtitle"] != null &&
-                              veglist[index]["subtitle"] is String)
-                            Text(veglist[index]["subtitle"] ?? "",
+                          if (bevrageslist[index]["subtitle"] != null &&
+                              bevrageslist[index]["subtitle"] is String)
+                            Text(bevrageslist[index]["subtitle"] ?? "",
                                 style: const TextStyle(
                                     fontSize: 16, color: toOnBoardText2))
                           else
-                          // Container(
-                          //   height: 30.h,
-                          //   width: 142.w,
-                          //   decoration: BoxDecoration(
-                          //     color: Colors.white,
-                          //     boxShadow: [BoxShadow(color: Color(0xff10CE7B))],
-                          //   ),
-                          //   child: Center(
-                          //     child: Text(
-                          //       veglist[index]["subtitleoffer"] ?? "", // Provide a default value or handle null case
-                          //       style: TextStyle(
-                          //         fontWeight: FontWeight.bold,
-                          //         fontSize: 24,
-                          //         color: Colors.black,
-                          //       ),
-                          //     ),
-                          //   ),
-                          // ),
                             Column(
                               children: [
                                 Container(
@@ -270,7 +270,7 @@ class _BeveragesScreenState extends State<BeveragesScreen> {
                                   ),
                                   child: Center(
                                     child: Text(
-                                      veglist[index]["offer"] ??
+                                      bevrageslist[index]["offer"] ??
                                           "", // Provide a default value or handle null case
                                       style: TextStyle(
                                         fontWeight: FontWeight.bold,
@@ -280,6 +280,23 @@ class _BeveragesScreenState extends State<BeveragesScreen> {
                                     ),
                                   ),
                                 ),
+                                if (bevrageslist[index]["fcontent"] != null &&
+                                    bevrageslist[index]["fcontent"] is String)
+                                  Padding(
+                                    padding: const EdgeInsets.all(5),
+                                    child: Center(
+                                        child: Text(
+                                      bevrageslist[index]["fcontent"] ?? "",
+                                      style:
+                                          TextStyle(color: Color(0xff707070)),
+                                    )),
+                                  )
+                                else
+                                  Center(
+                                      child: Text(
+                                    bevrageslist[index]["fcontent"] ?? "",
+                                    style: TextStyle(color: Color(0xff707070)),
+                                  ))
                               ],
                             ),
                         ],
@@ -290,18 +307,18 @@ class _BeveragesScreenState extends State<BeveragesScreen> {
                       padding: EdgeInsets.symmetric(horizontal: 20),
                       child: Row(
                         children: [
-                          if (veglist[index]["imageRs"] != null &&
-                              veglist[index]["imageRs"] is String)
+                          if (bevrageslist[index]["imageRs"] != null &&
+                              bevrageslist[index]["imageRs"] is String)
                             Image(
-                              image:
-                              AssetImage(veglist[index]["imageRs"] ?? ""),
+                              image: AssetImage(
+                                  bevrageslist[index]["imageRs"] ?? ""),
                             )
                           else
                             Text(""),
-                          if (veglist[index]["price"] != null &&
-                              veglist[index]["price"] is int)
+                          if (bevrageslist[index]["price"] != null &&
+                              bevrageslist[index]["price"] is int)
                             Text(
-                              veglist[index]["price"].toString() ??
+                              bevrageslist[index]["price"].toString() ??
                                   "", // Use the ?. operator to handle null
                               style: const TextStyle(color: Colors.black),
                             )
@@ -309,13 +326,13 @@ class _BeveragesScreenState extends State<BeveragesScreen> {
                             Text(""),
                           70.horizontalSpace,
                           Text(
-                            veglist[index]["peiece"] ?? "",
+                            bevrageslist[index]["peiece"] ?? "",
                             style: const TextStyle(color: Colors.black),
                           ),
                         ],
                       ),
                     ),
-                    20.verticalSpace,
+                    10.verticalSpace,
                   ],
                 ),
               ),
@@ -327,8 +344,8 @@ class _BeveragesScreenState extends State<BeveragesScreen> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => MainProductPage(
-                                index: index,
-                              )));
+                                    index: index,
+                                  )));
                     },
                     child: Container(
                       width: 44.w,
